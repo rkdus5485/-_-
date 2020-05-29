@@ -1,3 +1,5 @@
+<!--로그인 창에 입력된 아이디와 비밀번호를 디비에 저장된 데이터와 비교하여 맞으면 게임페이지로, 틀리면 아이디 또는 비밀번호가
+잘못되었다고 알려주는 jsp파일입니다.-->
 <%@ page contentType="text/html; charset=utf-8" %>
 
 <%@ page import = "java.sql.DriverManager" %>
