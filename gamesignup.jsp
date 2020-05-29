@@ -1,3 +1,4 @@
+<!--회원가입 시 입력된 아이디와 비밀번호와 닉네임을 디비에 저장 후 회원가입이 완료되면 로그인 페이지로 이동시켜주는 jsp파일입니다. -->
 <%@ page contentType = "text/html; charset=utf-8" %>
 
 <%@ page import = "java.sql.DriverManager"%>
