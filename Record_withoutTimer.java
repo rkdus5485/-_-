@@ -17,8 +17,8 @@ public class Record_withoutTimer {
 		String dbURL="jdbc:mysql://localhost:3306/rkdus?" + "useUnicode=true&characterEncoding=utf8";                             
 	    String dbID="kgy";
 	    String dbPassword="kgy1234";
-	    String SQL = "insert into record_withouttimer(GameID, point, playtime) values(?, ?, NOW())";
-	    java.util.Date realtime = new java.util.Date();
+	    String SQL = "insert into record_withouttimer(GameUsername, point, playtime) values(?, ?, NOW())";
+	    
 	    try {
 	    	Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
@@ -28,7 +28,7 @@ public class Record_withoutTimer {
 			
 			pstmt.setString(1, "PETER");
     		pstmt.setInt(2, 10);
-    		pstmt.setTimestamp(3,(Timestamp) realtime);
+    		pstmt.setInt(3, 1);
 			
 			int r = pstmt.executeUpdate();
 			

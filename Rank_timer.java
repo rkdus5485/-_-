@@ -25,9 +25,9 @@ public class Rank_timer {
 			pstmt = (PreparedStatement) conn.createStatement();
 			rs = pstmt.executeQuery(SQL);
 			while (rs.next()) { 
-				String GameID = rs.getString("GameID"); 
-				BigDecimal point = rs.getBigDecimal("point"); 
-				java.sql.Timestamp playtime = rs.getTimestamp("playtime"); 
+				String GameUsername = rs.getString("GameUsername"); 
+				BigDecimal time = rs.getBigDecimal("time"); 
+				BigDecimal playtime = rs.getBigDecimal("playtime"); 
 			}
 			
 		} catch (SQLException e) {

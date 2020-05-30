@@ -17,8 +17,8 @@ public class Record_Timer {
     	String dbURL="jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
         String dbID="kgy";
         String dbPassword="kgy1234";
-        String SQL = "insert into record_timer(GameID, time, playtime) values(?, ?, NOW()";
-        java.util.Date realtime = new java.util.Date();
+        String SQL = "insert into record_timer(GameUsername, time, playtime) values(?, ?, NOW()";
+       
         try {
         	
         	Class.forName("com.mysql.jdbc.Driver");
@@ -28,7 +28,7 @@ public class Record_Timer {
     		
     		pstmt.setString(1, "JAMES");
     		pstmt.setInt(2, 120);
-    		pstmt.setTimestamp(3,(Timestamp) realtime);
+    		pstmt.setInt(3,1);
 
     		
     		
