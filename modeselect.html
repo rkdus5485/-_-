@@ -1,20 +1,65 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+       <style type="text/css">
+       :root {
+ --input-padding-x: 1.5rem;
+ --input-padding-y: .75rem;
+}
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>회원가입</title>
-</head>
+body {
+ background: #007bff;
+ background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.card-signin {
+ border: 0;
+ border-radius: 1rem;
+ background: #fff;
+ text-align : center;
+ box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+ margin-bottom: 2rem;
+ font-weight: 300;
+ text-align: center;      
+ font-size: 1.5rem;
+
+}
+
+.card-signin .card-body {
+ padding: 2rem;
+ 
+}
+
+.form-signin {
+ width: 100%;
+}
+
+.form-signin .btn {
+ font-size: 80%;
+ border-radius: 5rem;
+ letter-spacing: .1rem;
+ font-weight: bold;
+ padding: 1rem;
+ transition: all 0.2s;
+}
+        </style>
 <body>
-	<form method="post" action="member_ok.php">
-
-			<fieldset>
-				<legend>모드선택</legend>
-					<table>
-<input type=button style="WIDTH: 60pt; HEIGHT: 60pt" value="게임모드1">
-<input type=button style="width:60pt;height:60pt;" value="게임모드2">
-<input type=button style="width:60pt;height:60pt;" value="랭킹보기">
-		</fieldset>
-	</form>
+ <div class="container">
+   <div class="row">
+     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+       <div class="card card-signin my-5">
+         <div class="card-body">
+           <h5 class="card-title text-center">Select Game Mode</h5>
+           <form class="form-signin">
+             <button class="btn btn-lg btn-primary btn-block text-uppercase">Game Description</button><br>
+             <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="location.href='http://webdev.iptime.org:8080/kgy/maingame.html' ">Score Mode</button><br>
+             <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="location.href='http://webdev.iptime.org:8080/kgy/maingame_timer.html' ">Timer Mode</button><br>
+             <button class="btn btn-lg btn-primary btn-block text-uppercase">Ranking</button>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </body>
-</html>
