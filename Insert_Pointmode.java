@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 
 public class Insert_Pointmode {
-	private Connection conn;   //데이터베이스에 접근하기 위한 객체
+	private Connection conn;  
     private PreparedStatement pstmt;  
 
 	public Insert_Pointmode() {

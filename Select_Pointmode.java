@@ -6,9 +6,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Select_Pointmode {
-	private Connection conn;   //데이터베이스에 접근하기 위한 객체
+	private Connection conn;   
     private PreparedStatement pstmt;  
     private ResultSet rs;
 	public Select_Pointmode() {
@@ -17,16 +18,69 @@ public class Select_Pointmode {
 	    String dbID="kgy";
 	    String dbPassword="kgy1234";
 	    String SQL = "SELECT * FROM record_withouttimer";
+	    StringBuilder del = new StringBuilder();
 	    try {
 	    	Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 			pstmt = (PreparedStatement) conn.createStatement();
 			rs = pstmt.executeQuery(SQL);
+			ArrayList<String> Username = new ArrayList<String>();
+		    ArrayList<Integer> pointer = new ArrayList<Integer>();
+		    int loc = 0; // 원래 자기 위치 
+		    int count = 1; // 등수계산 
+		    boolean flag = false; //크기비교 
 			while (rs.next()) { 
 				String GameUsername = rs.getString("GameUsername"); 
 				BigDecimal point= rs.getBigDecimal("point"); 
-				BigDecimal playtime = rs.getBigDecimal("playtime"); 
+				Username.add(GameUsername);
+				pointer.add(point.intValue());
 			}
+			for(String s: Username) { //자신의 기존데이터 위치 찾기 
+				if(Username.get(Username.size()-1) == s) {
+					break;
+				}
+				else {
+					loc++;
+				}
+			}
+			if(Username.size() != 0) {
+				for(int i : pointer) {
+					if(pointer.get(loc) > pointer.get(pointer.size()-1)) {
+						count--; //기존데이터보다 현재 점수가 낮은 경우 
+						flag = true;
+					}
+					if(pointer.get(pointer.size()-1) < i) {
+						count++;
+					}
+				}
+			}
+			else count = 1;
+			
+			//현재등수 
+			String printgrade = "My rank : " + count + "Username : " + Username.get(loc);
+			
+			//넣어줘야할 점수를 변수에 저장.
+			String id = Username.get(Username.size()-1);
+			int valueloc = pointer.get(loc);
+			int value = pointer.get(pointer.size()-1);
+			
+			String sql = del.append("delete from record_timer where id = ")
+	                .append(id)
+	                .append(";")
+	                .toString();
+			pstmt.executeUpdate(sql);
+			
+			//다시 데이터 입력
+			String sql_ins = "insert into record_withouttimer(GameUsername, point) values(?, ?)";
+			pstmt.executeUpdate(sql_ins);
+			pstmt.setString(1, id);
+			if(flag) {
+				pstmt.setInt(2, valueloc); //기존데이터값이 새로들어온 데이터 값이 큰 경
+			}
+			else {
+				pstmt.setInt(2, value); //반대의 경우 
+			}
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
