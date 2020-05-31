@@ -8,11 +8,10 @@
         .width500px{width: 450px;  display: inline-block; text-align: center;}
         .center{text-align: center;}
         #cardTable{border-collapse: collapse;}
-        #cardTable td{border: 1px solid #42423E; width: 75px; height: 121px; text-align: center; cursor: pointer;}
-        #cardTable td img{max-width: 70px;}
+        #cardTable td{border: 1px solid #42423E; width: 110px; height: 121px; text-align: center; cursor: pointer;}
+        #cardTable td img{max-width: 110px;}
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
         #countDown{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem;}
-        #username{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem;}
 		#countupbar{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem; text-align: center;}
         #info{width: 469px; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
 
@@ -44,7 +43,7 @@
         </style>
 
         <SCRIPT LANGUAGE="Javascript1.2">
-
+        
         var currentsec=0;
         var currentmin=0;
         var currentmil=0;
@@ -85,7 +84,7 @@
         Strmil="00";
         }
 
-
+        
 
 	// 게임 상태
             var gameState = '';
@@ -116,17 +115,17 @@
                 'https://image.flaticon.com/icons/svg/1135/1135549.svg','https://image.flaticon.com/icons/svg/1135/1135549.svg', // 바나나
                 'https://image.flaticon.com/icons/svg/874/874997.svg','https://image.flaticon.com/icons/svg/874/874997.svg', // 수박
                 'https://image.flaticon.com/icons/svg/2754/2754032.svg','https://image.flaticon.com/icons/svg/2754/2754032.svg', // 체리
-                'https://image.flaticon.com/icons/svg/590/590779.svg','https://image.flaticon.com/icons/svg/590/590779.svg', // 토마토
+                //'https://image.flaticon.com/icons/svg/590/590779.svg','https://image.flaticon.com/icons/svg/590/590779.svg', // 토마토
                 'https://image.flaticon.com/icons/svg/700/700804.svg','https://image.flaticon.com/icons/svg/700/700804.svg', // 망고
                 'https://image.flaticon.com/icons/svg/2548/2548560.svg','https://image.flaticon.com/icons/svg/2548/2548560.svg', // 메론
                 'https://image.flaticon.com/icons/svg/590/590775.svg','https://image.flaticon.com/icons/svg/590/590775.svg' // 복숭아
                 ];
                 var cardTableCode = '<tr>';
-                for(var i=0;i<24;i++) {
-                    if(i>0 && i%6 == 0){
+                for(var i=0;i<20;i++) {
+                    if(i>0 && i%4 == 0){
                         cardTableCode += '</tr><tr>';
                     }
-                    var idx = generateRandom(0,23-i);
+                    var idx = generateRandom(0,19-i);
                     var img = cards.splice(idx,1);
 
                     cardTableCode += '<td id="card'+i+'"><img src="'+img+'"><span>?</span></td>';
@@ -190,7 +189,7 @@
                     if(openCardSrc == openCardSrc2) { // 일치
                         openCardId = '';
                         openCardId2 = '';
-                        if(++openedCtn == 12){
+                        if(++openedCtn == 10){
                             keepgoin=false
                             alert('시간 '+Strmin+':'+Strsec+':'+Strmil);
 
@@ -213,7 +212,7 @@
                 openCardId2 = '';
             }
 
-
+            
 
             $(document).on('click', '#startBtn', function(){
                 if(gameState == '') {
@@ -254,26 +253,23 @@
 				</div>
                 <div id='countDown'>준비
                 </div>
-
+				
                 <table id='cardTable'>
                 </table>
                 <div id='info'>
                     출발 버튼을 눌러주세요<br>
-                </div>
-                <div>
-                <div id='username'>플레이어 이름 : ○○○
                 </div>
                   <table id="menuTable">
                     <tr>
                         <td class='alignLeft'>
                             <INPUT TYPE="button" id='startBtn' NAME="start" VALUE=" 출발 ">
                         </td>
-
+                        
                     </tr>
                 </table>
             </div>
-
-
+            
+              
             </div>
         </div>
         </div>
