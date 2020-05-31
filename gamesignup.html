@@ -1,0 +1,59 @@
+<!--회원가입 페이지 html 파일입니다.-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	 <script>
+	function checkID(){
+		var sid= document.signupform; // sid = 폼 자체를 변수로 선언
+		if(!sid.userid.value){ // 만약 입력한 값이 없으면 
+			alert("아이디를 입력해주세요");
+			sid.userid.focus(); // 아이디에 포커스
+		}else{
+		var joinid = sid.userid.value;
+		var url = "./gamecheckID.jsp?userid="+joinid;
+		window.open(url,"","width=400, height=150, resizable=no, scrollbars=no");
+	}};
+	function checkUsername(){
+		var sUser= document.signupform; // sid = 폼 자체를 변수로 선언
+		if(!sUser.username.value){ // 만약 입력한 값이 없으면 
+			alert("닉네임을 입력해주세요");
+			sUser.username.focus(); // 아이디에 포커스
+		}else{
+		var joinusername = sUser.username.value;
+		var url = "./gamecheckUsername.jsp?username="+joinusername;
+		window.open(url,"","width=400, height=150, resizable=no, scrollbars=no");
+	}};
+  </script>
+	<title>회원가입</title>
+</head>
+<body>
+	<form method="post" action="gamesignup.jsp" id="signupform" name="signupform">
+		<h1>회원가입</h1>
+			<fieldset>
+				<legend>입력사항</legend>
+					<table>
+						<tr>
+							<td>아이디</td>
+							<td><input type="text" size="35" id="userid" name="userid" placeholder="아이디" "></td>
+							<td><input type="button" value="중복확인" onClick="javascript:checkID()">
+   </td>
+						</tr>
+						<tr>
+							<td>비밀번호</td>
+							<td><input type="password" size="35" id="userpw" name="userpw" placeholder="비밀번호"></td>
+						</tr>
+						<tr>
+							<td>닉네임</td>
+							<td><input type="text" size="35" id="username"name="username" placeholder="username" "></td>
+							<td><input type="button" value="중복확인" onClick="javascript:checkUsername()">
+						</tr>
+
+					</table>
+
+				<input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" />
+			
+		</fieldset>
+	</form>
+</body>
+</html>
