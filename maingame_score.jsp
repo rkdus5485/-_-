@@ -179,14 +179,14 @@
                     clearInterval(intervalID);
                     $('#countDown').text("시작!");
                     hiddenCards();
-                    gameState = '';
+                    gameState = 'ingame';
                 }, 6000);
             }
  
  
             // 카드 선택 시
             $(document).on('click', '#cardTable td', function(){
-                if(gameState != '') return; // 게임 카운트 다운중일 때 누른 경우 return
+                if(gameState != 'ingame') return; // 게임 카운트 다운중일 때 누른 경우 return
                 if(openCardId2 != '') return; // 2개 열려있는데 또 누른 경우 return
                 if($(this).hasClass('opened')) return; // 열려있는 카드를 또 누른 경우                
                 $(this).addClass('opened'); // 열여있다는 것을 구분하기 위한 class 추가
@@ -210,6 +210,7 @@
                         openCardId2 = '';
                         scorePlus();
                         if(++openedCtn == 10){
+				gameState='';
                             alert('성공!!\n'+score+'점 입니다!');
 			    window.location.href="http://webdev.iptime.org:8080/kgy/insertscore.jsp?score="+score;
 							
@@ -256,6 +257,8 @@
                     startGame();
                     gameState = 'alreadyStart'
                 }
+		    if(gameState != 'ingame'){
+                  document.getElementById("startBtn").disabled = true;}
             });
             
 
