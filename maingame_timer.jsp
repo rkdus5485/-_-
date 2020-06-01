@@ -71,7 +71,7 @@
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 465px;
+  width: 360px;
   padding: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -294,12 +294,12 @@
 						  <TR>
 							<TD COLSPAN=3>
 							<DIV align="center">
-							<input type="text" style="border: none; background: transparent;" size=3>
-							 <INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="minutes" VALUE="00" SIZE=5  >
-									 <input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=3 value=":">
-							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="seconds" VALUE="00" SIZE=5 >
-										<input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=3 value=":">
-							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="milsecs" VALUE="00" SIZE=5 >
+							<input type="text" style="border: none; background: transparent;" size=1>
+							 <INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="minutes" VALUE="00" SIZE=3  >
+									 <input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=1 value=":">
+							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="seconds" VALUE="00" SIZE=3 >
+										<input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=1 value=":">
+							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="milsecs" VALUE="00" SIZE=3 >
 							 </TD>
 							</TR>
 							</TABLE>
