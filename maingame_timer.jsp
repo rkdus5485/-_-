@@ -293,12 +293,13 @@
 						 <TABLE>
 						  <TR>
 							<TD COLSPAN=3>
-							<DIV>
-							 <INPUT TYPE="text" NAME="minutes" VALUE="00" SIZE=5  >
-									 :
-							 <INPUT TYPE="text" NAME="seconds" VALUE="00" SIZE=5 >
-										:
-							 <INPUT TYPE="text" NAME="milsecs" VALUE="00" SIZE=5 >
+							<DIV align="center">
+							<input type="text" style="border: none; background: transparent;" size=3>
+							 <INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="minutes" VALUE="00" SIZE=5  >
+									 <input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=3 value=":">
+							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="seconds" VALUE="00" SIZE=5 >
+										<input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=3 value=":">
+							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="milsecs" VALUE="00" SIZE=5 >
 							 </TD>
 							</TR>
 							</TABLE>
