@@ -73,7 +73,7 @@
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 230px;
+  width: 180px;
   padding: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -86,7 +86,7 @@
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 230px;
+  width: 180px;
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
