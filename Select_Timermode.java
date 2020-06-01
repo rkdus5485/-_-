@@ -26,7 +26,7 @@ public class Select_Timermode {
 	    
 
 	    ArrayList<String> Username = new ArrayList<String>();
-	    ArrayList<Integer> timer = new ArrayList<Integer>();
+	    ArrayList<String> timer = new ArrayList<String>();
 	    int loc = 0; // 원래 자기 위치 
 	    int count = 1; // 등수계산 
 	    boolean flag = false;
@@ -37,9 +37,9 @@ public class Select_Timermode {
 			rs = pstmt.executeQuery(SQL);
 			while (rs.next()) { 
 				String GameUsername = rs.getString("GameUsername"); 
-				BigDecimal time = rs.getBigDecimal("time"); 
+				String time = rs.getString("time"); 
 				Username.add(GameUsername);
-				timer.add(time.intValue());
+				timer.add(time);
 			}
 			
 			for(String s: Username) { //자신의 기존데이터 위치 찾기 
@@ -52,12 +52,12 @@ public class Select_Timermode {
 			}
 			
 			if(Username.size() != 0) {
-				for(int i : timer) {
-					if(timer.get(loc) > timer.get(timer.size()-1)) {
+				for(String i : timer) {
+					if(Integer.parseInt(timer.get(loc)) > Integer.parseInt(timer.get(timer.size()-1))) {
 						count--; //기존데이터보다 현재 점수가 낮은 경우 
 						flag = true;
 					}
-					if(timer.get(timer.size()-1) < i) {
+					if(Integer.parseInt(timer.get(timer.size()-1)) < Integer.parseInt(i)) {
 						count++;
 					}
 				}
@@ -68,8 +68,8 @@ public class Select_Timermode {
 			
 			//넣어줘야할 점수를 변수에 저장.
 			String id = Username.get(Username.size()-1);
-			int valueloc = timer.get(loc);
-			int value = timer.get(timer.size()-1);
+			String valueloc = timer.get(loc);
+			String value = timer.get(timer.size()-1);
 			
 			
 			//중복데이터 삭제
@@ -84,10 +84,10 @@ public class Select_Timermode {
 			pstmt.executeUpdate(sql_ins);
 			pstmt.setString(1, id);
 			if(flag) {
-				pstmt.setInt(2, valueloc); //기존데이터값이 새로들어온 데이터 값이 큰 경
+				pstmt.setString(2, valueloc); //기존데이터값이 새로들어온 데이터 값이 큰 경
 			}
 			else {
-				pstmt.setInt(2, value); //반대의 경우 
+				pstmt.setString(2, value); //반대의 경우 
 			}
 			
 

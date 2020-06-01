@@ -25,15 +25,15 @@ public class Select_Pointmode {
 			pstmt = (PreparedStatement) conn.createStatement();
 			rs = pstmt.executeQuery(SQL);
 			ArrayList<String> Username = new ArrayList<String>();
-		    ArrayList<Integer> pointer = new ArrayList<Integer>();
+		    ArrayList<String> pointer = new ArrayList<String>();
 		    int loc = 0; // 원래 자기 위치 
 		    int count = 1; // 등수계산 
 		    boolean flag = false; //크기비교 
 			while (rs.next()) { 
 				String GameUsername = rs.getString("GameUsername"); 
-				BigDecimal point= rs.getBigDecimal("point"); 
+				String point= rs.getString("point"); 
 				Username.add(GameUsername);
-				pointer.add(point.intValue());
+				pointer.add(point);
 			}
 			for(String s: Username) { //자신의 기존데이터 위치 찾기 
 				if(Username.get(Username.size()-1) == s) {
@@ -44,25 +44,26 @@ public class Select_Pointmode {
 				}
 			}
 			if(Username.size() != 0) {
-				for(int i : pointer) {
-					if(pointer.get(loc) > pointer.get(pointer.size()-1)) {
-						count--; //기존데이터보다 현재 점수가 낮은 경우 
-						flag = true;
-					}
-					if(pointer.get(pointer.size()-1) < i) {
+				for(String i : pointer) {
+					if(Integer.parseInt(pointer.get(pointer.size()-1)) < Integer.parseInt(i)) {
 						count++;
 					}
 				}
 			}
 			else count = 1;
 			
+			if(Integer.parseInt(pointer.get(loc)) > Integer.parseInt(pointer.get(pointer.size()-1))) {
+				count--; //기존데이터보다 현재 점수가 낮은 경우 
+				flag = true;
+			}
+			
 			//현재등수 
 			String printgrade = "My rank : " + count + "Username : " + Username.get(loc);
 			
 			//넣어줘야할 점수를 변수에 저장.
 			String id = Username.get(Username.size()-1);
-			int valueloc = pointer.get(loc);
-			int value = pointer.get(pointer.size()-1);
+			String valueloc = pointer.get(loc);
+			String value = pointer.get(pointer.size()-1);
 			
 			String sql = del.append("delete from record_timer where id = ")
 	                .append(id)
@@ -75,10 +76,10 @@ public class Select_Pointmode {
 			pstmt.executeUpdate(sql_ins);
 			pstmt.setString(1, id);
 			if(flag) {
-				pstmt.setInt(2, valueloc); //기존데이터값이 새로들어온 데이터 값이 큰 경
+				pstmt.setString(2, valueloc); //기존데이터값이 새로들어온 데이터 값이 큰 경
 			}
 			else {
-				pstmt.setInt(2, value); //반대의 경우 
+				pstmt.setString(2, value); //반대의 경우 
 			}
 			
 			

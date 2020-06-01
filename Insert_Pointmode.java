@@ -27,7 +27,7 @@ public class Insert_Pointmode {
 			
 			
 			pstmt.setString(1, "PETER");
-    		pstmt.setInt(2, 10);
+    		pstmt.setString(2, "10");
     		
 			
 			int r = pstmt.executeUpdate();

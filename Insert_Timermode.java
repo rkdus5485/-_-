@@ -27,7 +27,7 @@ public class Insert_Timermode {
 
     		
     		pstmt.setString(1, "JAMES");
-    		pstmt.setInt(2, 120);
+    		pstmt.setString(2, "120");
     		
 
     		
