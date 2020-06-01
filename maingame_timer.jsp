@@ -1,3 +1,53 @@
+<%@ page language="java" contentType ="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ page import = "java.sql.DriverManager" %>
+<%@ page import = "java.sql.Connection" %>
+<%@ page import = "java.sql.Statement" %>
+<%@ page import = "java.sql.PreparedStatement"%>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "java.sql.SQLException" %>
+<%@ page import = "java.io.PrintWriter" %>
+<%		Class.forName("com.mysql.jdbc.Driver");
+
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		PreparedStatement ps = null;
+
+		try{
+			String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
+			String dbUser = "kgy";
+			String dbPass = "kgy1234";
+
+
+
+			conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+
+		String userid = (String)session.getAttribute("userid");
+		
+
+
+		
+
+		String query ="select GameUsername from login_game where GameID='"+userid+"'";
+
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(query);
+			
+
+		if(userid == null){
+		PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('로그인 되지 않았습니다.')");
+				script.println("</script>");
+	%>
+
+	<script>
+	location.href='http://webdev.iptime.org:8080/kgy/gamesignin.html'
+	</script>
+	<%
+}
+%>
 <html lang="en">
  <head>
   <meta charset="UTF-8">
@@ -116,7 +166,6 @@
                 'https://image.flaticon.com/icons/svg/1135/1135549.svg','https://image.flaticon.com/icons/svg/1135/1135549.svg', // 바나나
                 'https://image.flaticon.com/icons/svg/874/874997.svg','https://image.flaticon.com/icons/svg/874/874997.svg', // 수박
                 'https://image.flaticon.com/icons/svg/2754/2754032.svg','https://image.flaticon.com/icons/svg/2754/2754032.svg', // 체리
-                //'https://image.flaticon.com/icons/svg/590/590779.svg','https://image.flaticon.com/icons/svg/590/590779.svg', // 토마토
                 'https://image.flaticon.com/icons/svg/700/700804.svg','https://image.flaticon.com/icons/svg/700/700804.svg', // 망고
                 'https://image.flaticon.com/icons/svg/2548/2548560.svg','https://image.flaticon.com/icons/svg/2548/2548560.svg', // 메론
                 'https://image.flaticon.com/icons/svg/590/590775.svg','https://image.flaticon.com/icons/svg/590/590775.svg' // 복숭아
@@ -193,6 +242,9 @@
                         if(++openedCtn == 10){
                             keepgoin=false
                             alert('시간 '+Strmin+':'+Strsec+':'+Strmil);
+			    var gametime= Strmin*10000+Strsec*100+Strmil*1;
+			    //alert(gametime);
+			    window.location.href="http://webdev.iptime.org:8080/kgy/inserttime.jsp?time="+gametime;
 
                         }
                     }else { // 불일치
@@ -261,7 +313,11 @@
                     출발 버튼을 눌러주세요<br>
                 </div>
 		<div>
-                <div id='username'>유저 이름 : ○○○
+		<%while(rs.next()){
+			String username = rs.getString("GameUsername");
+		%>
+                <div id='username' name='username'><%=username%>
+			<%}%>
                 </div>
                   <table id="menuTable">
                     <tr>
@@ -282,3 +338,12 @@
   </div>
  </body>
 </html>
+<%
+		}finally{
+			if(rs != null) try{rs.close();}catch(SQLException ex){}
+			if(stmt != null) try{stmt.close();} catch(SQLException ex){}
+			if(conn != null) try{conn.close();} catch(SQLException ex){}
+		}
+
+%>
+
