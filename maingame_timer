@@ -1,0 +1,39 @@
+//maingame_timer.jsp 수정사항
+//게임 진행 중 출발 버튼이 눌리지않도록 수정
+
+//시작 카운트 다운
+var intervalID = setInterval(setText, 1000);
+setTimeout(function(){
+    clearInterval(intervalID);
+     keepgoin=true;
+     timer();
+    $('#countDown').text("시작!");
+    hiddenCards();
+    gameState = 'ingame';
+}, 6000);
+
+// 카드 선택 시
+           $(document).on('click', '#cardTable td', function(){
+               if(gameState != 'ingame') return; // 게임 카운트 다운중일 때 누른 경우 return
+
+if(openCardSrc == openCardSrc2) { // 일치
+                       openCardId = '';
+                       openCardId2 = '';
+                       if(++openedCtn == 10){
+                           keepgoin=false
+             gameState=''; //gameState 초기화
+                           alert('시간 '+Strmin+':'+Strsec+':'+Strmil);
+             var gametime= Strmin*10000+Strsec*100+Strmil*1;
+             //alert(gametime);
+             window.location.href="http://webdev.iptime.org:8080/kgy/inserttime.jsp?time="+gametime;
+
+                       }
+
+$(document).on('click', '#startBtn', function(){
+               if(gameState == '') {
+                   startGame();
+                   gameState = 'alreadyStart'
+               }
+       if(gameState != 'ingame'){
+                  document.getElementById("startBtn").disabled = true;} 
+           });
