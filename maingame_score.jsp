@@ -136,7 +136,6 @@
                 'https://image.flaticon.com/icons/svg/1135/1135549.svg','https://image.flaticon.com/icons/svg/1135/1135549.svg', // 바나나
                 'https://image.flaticon.com/icons/svg/874/874997.svg','https://image.flaticon.com/icons/svg/874/874997.svg', // 수박
                 'https://image.flaticon.com/icons/svg/2754/2754032.svg','https://image.flaticon.com/icons/svg/2754/2754032.svg', // 체리
-              //'https://image.flaticon.com/icons/svg/590/590779.svg','https://image.flaticon.com/icons/svg/590/590779.svg', // 토마토
                 'https://image.flaticon.com/icons/svg/700/700804.svg','https://image.flaticon.com/icons/svg/700/700804.svg', // 망고
                 'https://image.flaticon.com/icons/svg/2548/2548560.svg','https://image.flaticon.com/icons/svg/2548/2548560.svg', // 메론
                 'https://image.flaticon.com/icons/svg/590/590775.svg','https://image.flaticon.com/icons/svg/590/590775.svg' // 복숭아
@@ -163,7 +162,7 @@
  
             // 게임 시작
             function startGame() {
-                var sec =2;
+                var sec =6;
                 
                 $('#info').hide(); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
@@ -181,7 +180,7 @@
                     $('#countDown').text("시작!");
                     hiddenCards();
                     gameState = '';
-                }, 3000);
+                }, 6000);
             }
  
  
@@ -210,9 +209,9 @@
                         openCardId = '';
                         openCardId2 = '';
                         scorePlus();
-                        if(++openedCtn == 1){
+                        if(++openedCtn == 10){
                             alert('성공!!\n'+score+'점 입니다!');
-							window.location.href="http://webdev.iptime.org:8080/kgy/insertscore.jsp?score="+score;
+			    window.location.href="http://webdev.iptime.org:8080/kgy/insertscore.jsp?score="+score;
 							
 							
                         }
