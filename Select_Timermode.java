@@ -36,9 +36,9 @@ public class Select_Timermode {
 			pstmt = (PreparedStatement) conn.createStatement();
 			rs = pstmt.executeQuery(SQL);
 			while (rs.next()) { 
-				String GameUsername = rs.getString("GameUsername"); 
+				String GameID = rs.getString("GameID"); 
 				String time = rs.getString("time"); 
-				Username.add(GameUsername);
+				Username.add(GameID);
 				timer.add(time);
 			}
 			

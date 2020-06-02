@@ -17,7 +17,7 @@ public class Insert_Timermode {
     	String dbURL="jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
         String dbID="kgy";
         String dbPassword="kgy1234";
-        String SQL = "insert into record_timer(GameUsername, time) values(?, ?)";
+        String SQL = "insert into record_timer(GameID, time) values(?, ?)";
        
         try {
         	

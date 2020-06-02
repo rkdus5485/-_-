@@ -30,9 +30,9 @@ public class Select_Pointmode {
 		    int count = 1; // 등수계산 
 		    boolean flag = false; //크기비교 
 			while (rs.next()) { 
-				String GameUsername = rs.getString("GameUsername"); 
+				String GameID = rs.getString("GameID"); 
 				String point= rs.getString("point"); 
-				Username.add(GameUsername);
+				Username.add(GameID);
 				pointer.add(point);
 			}
 			for(String s: Username) { //자신의 기존데이터 위치 찾기 

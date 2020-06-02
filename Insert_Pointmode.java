@@ -17,7 +17,7 @@ public class Insert_Pointmode {
 		String dbURL="jdbc:mysql://localhost:3306/rkdus?" + "useUnicode=true&characterEncoding=utf8";                             
 	    String dbID="kgy";
 	    String dbPassword="kgy1234";
-	    String SQL = "insert into record_withouttimer(GameUsername, point) values(?, ?)";
+	    String SQL = "insert into record_withouttimer(GameID, point) values(?, ?)";
 	    
 	    try {
 	    	Class.forName("com.mysql.jdbc.Driver");
