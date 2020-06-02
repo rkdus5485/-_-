@@ -3,6 +3,49 @@
 <html>
 <head>
 	<meta charset="utf-8" />
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <style type="text/css">
+        :root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  background: #fff;
+  text-align : center;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+         </style>
 	 <script>
 	function checkID(){
 		var sid= document.signupform; // sid = 폼 자체를 변수로 선언
@@ -25,35 +68,34 @@
 		window.open(url,"","width=400, height=150, resizable=no, scrollbars=no");
 	}};
   </script>
+	
+	
 	<title>회원가입</title>
 </head>
 <body>
 	<form method="post" action="gamesignup.jsp" id="signupform" name="signupform">
-		<h1>회원가입</h1>
-			<fieldset>
-				<legend>입력사항</legend>
-					<table>
-						<tr>
-							<td>아이디</td>
-							<td><input type="text" size="35" id="userid" name="userid" placeholder="아이디" "></td>
-							<td><input type="button" value="중복확인" onClick="javascript:checkID()">
-   </td>
-						</tr>
-						<tr>
-							<td>비밀번호</td>
-							<td><input type="password" size="35" id="userpw" name="userpw" placeholder="비밀번호"></td>
-						</tr>
-						<tr>
-							<td>닉네임</td>
-							<td><input type="text" size="35" id="username"name="username" placeholder="username" "></td>
-							<td><input type="button" value="중복확인" onClick="javascript:checkUsername()">
-						</tr>
-
-					</table>
-
-				<input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" />
-			
-		</fieldset>
-	</form>
+          <div class="card card-signin my-5">
+          		<h2>회원가입</h2>
+           <form class="form-signin">
+		<table>
+		<tr>
+             <tr>
+	          <div class="form-label-group">
+                <label for="inputEmail">Username</label>
+                <input type="email" id="username" class="username" placeholder="닉네임" required autofocus>              
+              </div>
+              <div class="form-label-group">
+              <label for="inputPassword">Password</label>
+                <input type="password" id="userpw" class="userpw" placeholder="비밀번호" required>              
+              </div>
+	   </tr>
+	</table>
+	<input type="submit" value="가입하기" />
+        <input type="reset" value="다시쓰기" />
+        <br>
+        <br>
+     </form>
+  </div>
+  </form>
 </body>
 </html>
