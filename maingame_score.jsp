@@ -65,8 +65,9 @@
         #cardTable td img{max-width: 110px;}
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
         #countDown{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem;}
-	#username{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem;}
+	#username{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
         #info{width: 469px; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
+	#maxscore{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left}
         
 #startBtn{
   border: 0;
@@ -289,6 +290,8 @@
                 <div id='username' name='username' ><%=username%>
 				<%}%>	
                 </div>
+		<div id='maxscore' name='maxscore'>999
+		</div><br><br>
 				
                   <table id="menuTable">
                     <tr>
