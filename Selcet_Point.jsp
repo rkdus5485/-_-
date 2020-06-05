@@ -13,6 +13,7 @@
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		PreparedStatement stmt = null;
+		PreparedStatement itmt = null;
 
 		StringBuilder sb = new StringBuilder();
 		
@@ -36,18 +37,29 @@
 				conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 				ResultSet rs = pstmt.executeQuery(SQL);
 				while(rs.next()){
-					String name = rs.getString("GameUsername");
+					temp[1] = rs.getString("GameUsername");
 					temp[0] = rs.getString("point");
 				}
-				
-				if(Integer.parseInt(point) > Integer.parseInt(temp[0])){
-					String sql = "update record_withouttimer set time=? where id=?";
-					stmt = conn.prepareStatement(sql);
-					stmt.setString(1, userid);
-					stmt.setString(2, point);
-
-					stmt.executeUpdate();
+				if(temp[1] == null){
+					 String SQL_insert = "insert into record_withouttimer(GameID, point) values(?, ?)";
+					 itmt = conn.prepareStatement(SQL_insert);
+					 itmt.setString(1,userid);
+					 itmt.setString(2,point);
+					 
+					 itmt.executeUpdate();
+					 
 				}
+				else{
+					if(Integer.parseInt(point) > Integer.parseInt(temp[0])){
+						String sql = "update record_withouttimer set point=? where id=?";
+						stmt = conn.prepareStatement(sql);
+						stmt.setString(1, userid);
+						stmt.setString(2, point);
+
+						stmt.executeUpdate();
+					}
+				}
+				
 				
 
 				%>

@@ -13,7 +13,7 @@
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		PreparedStatement stmt = null;
-
+		PreparedStatement itmt = null;
 		StringBuilder sb = new StringBuilder();
 		
 
@@ -40,13 +40,24 @@
 					temp[0] = rs.getString("time");
 				}
 				
-				if(Integer.parseInt(time) > Integer.parseInt(temp[0])){
-					String sql = "update record_timer set time=? where id=?";
-					stmt = conn.prepareStatement(sql);
-					stmt.setString(1, userid);
-					stmt.setString(2, time);
+				if(temp[1] == null){
+					 String SQL_insert = "insert into record_timer(GameID, time) values(?, ?)";
+					 itmt = conn.prepareStatement(SQL_insert);
+					 itmt.setString(1,userid);
+					 itmt.setString(2,time);
+					 
+					 itmt.executeUpdate();
+					 
+				}
+				else{
+					if(Integer.parseInt(time) > Integer.parseInt(temp[0])){
+						String sql = "update record_timer set time=? where id=?";
+						stmt = conn.prepareStatement(sql);
+						stmt.setString(1, userid);
+						stmt.setString(2, time);
 
-					stmt.executeUpdate();
+						stmt.executeUpdate();
+					}
 				}
 				
 
