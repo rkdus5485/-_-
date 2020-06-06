@@ -24,8 +24,10 @@
 
 			conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 
-		String userid = (String)session.getAttribute("userid");
-		
+			String username = (String)session.getAttribute("username");
+			String query = "select point from record_withouttimer where GameUsername = '"+ username + "'";
+			ps = conn.prepareStatement(query);
+			rs=ps.executeQuery();
 
 
 		
@@ -36,15 +38,13 @@
 			rs = stmt.executeQuery(query);
 			
 
-		if(userid == null){
-		PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("alert('로그인 되지 않았습니다.')");
-				script.println("</script>");
+		if(username == null){
+		
 	%>
 
 	<script>
-	location.href='http://webdev.iptime.org:8080/kgy/gamesignin.html'
+	alert('로그인 되지 않았습니다. 로그인 페이지로 이동합니다.');
+	window.location.href="http://webdev.iptime.org:8080/kgy/gamesignin.html";
 	</script>
 	<%
 }
@@ -57,7 +57,7 @@
   <title>같은 그림 찾기</title>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <style type="text/css">
-		body{background: #007bff; background: linear-gradient(to right, #0062E6, #33AEFF); text-align: center;}
+	body{background: #007bff; background: linear-gradient(to right, #0062E6, #33AEFF); text-align: center;}
         .width500px{width: 450px;  display: inline-block; text-align: center;}
         .center{text-align: center;}
         #cardTable{border-collapse: collapse;}
@@ -283,15 +283,16 @@
                 <div id='info'>
                     start 버튼을 눌러주세요<br>
                 </div>
-		    <div>
-				<%while(rs.next()){
-				String username = rs.getString("GameUsername");
-			%>
-                <div id='username' name='username' ><%=username%>
-				<%}%>	
-                </div>
-		<div id='maxscore' name='maxscore'>999
-		</div><br><br>
+		    <div id='username' name='username' ><%=username%>
+					
+                </div><%
+			if(rs.next()){
+				String point=rs.getString("point");
+
+			%>	
+		<div id='maxscore' name='maxscore'><%=point%>
+		<%}
+		%></div><br><br>
 				
                   <table id="menuTable">
                     <tr>
