@@ -213,7 +213,7 @@
                         if(++openedCtn == 10){
 				gameState='';
                             alert('성공!!\n'+score+'점 입니다!');
-			    window.location.href="http://webdev.iptime.org:8080/kgy/insertscore.jsp?score="+score;
+			    window.location.href="http://webdev.iptime.org:8080/kgy/insert_scoremode.jsp?score="+score;
 							
 							
                         }
