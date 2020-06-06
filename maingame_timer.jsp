@@ -1,3 +1,6 @@
+<!--	타이머 모드 게임입니다
+	username별 최저시간이 나옵니다
+-->
 <%@ page language="java" contentType ="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ page import = "java.sql.DriverManager" %>
@@ -23,30 +26,25 @@
 
 			conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 
-		String userid = (String)session.getAttribute("userid");
+			String username = (String)session.getAttribute("username");
 		
-
-
-		
-
-		String query ="select GameUsername from login_game where GameID='"+userid+"'";
-
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(query);
+
+			String query = "select time from record_timer where GameUsername = '"+ username +"'";
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
 			
 
 		if(userid == null){
-		PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("alert('로그인 되지 않았습니다.')");
-				script.println("</script>");
+		
 	%>
 
-	<script>
-	location.href='http://webdev.iptime.org:8080/kgy/gamesignin.html'
-	</script>
+			<script>
+			alert('로그인 되지 않았습니다. 로그인 페이지로 이동합니다.');
+			location.href='http://webdev.iptime.org:8080/kgy/gamesignin.html'
+			</script>
 	<%
-}
+		}
 %>
 <html lang="en">
  <head>
@@ -62,7 +60,7 @@
         #cardTable td img{max-width: 110px;}
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
 	#username{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
-	#maxscore{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
+	#maxtime{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
         #countDown{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem;}
 	#countupbar{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem; text-align: center;}
         #info{width: 469px; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
@@ -317,14 +315,19 @@
                 <div id='info'>
                     출발 버튼을 눌러주세요<br>
                 </div>
+							  
 		<div>
-		<%while(rs.next()){
-			String username = rs.getString("GameUsername");
-		%>
-                <div id='username' name='username'><%=username%>
+			<div id='username' name='username' ><%=username%>
+
+                	</div>
+                <%
+				if(rs.next()){
+					String time = rs.getString("time");
+					
+				%>
+			
+		<div id='maxtime' name='maxtime'><%=time%>
 			<%}%>
-                </div>
-		<div id='maxscore' name='maxscore'>00:00:00
 		</div><br><br>
                   <table id="menuTable">
                     <tr>
