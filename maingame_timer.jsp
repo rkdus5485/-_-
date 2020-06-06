@@ -246,7 +246,7 @@
                             alert('시간 '+Strmin+':'+Strsec+':'+Strmil);
 			    var gametime= Strmin*10000+Strsec*100+Strmil*1;
 			    //alert(gametime);
-			    window.location.href="http://webdev.iptime.org:8080/kgy/inserttime.jsp?time="+gametime;
+			    window.location.href="http://webdev.iptime.org:8080/kgy/insert_timermode.jsp?time="+gametime;
 
                         }
                     }else { // 불일치
