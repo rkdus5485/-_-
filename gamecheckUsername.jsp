@@ -68,7 +68,7 @@
 			else
 		{
 			%>
-			<input type="text" value="<%=username%>" name="username" id="username" class="username">은 사용가능합니다.<br>
+			<input type="text" value="<%=username%>" name="username" id="username" class="username" readOnly />은 사용가능합니다.<br>
 			
 			<input type="button" value="사용하기" onClick="javascript:btnClose()">
 			<%
