@@ -44,28 +44,33 @@
 		
 	
 		function btnClose(){
-			var semail=document.checkform;
-			opener.document.signupform.username.value="<%=username%>";
-			window.close();
-	};
+
+			var sUser= document.checkform; // sid = 폼 자체를 변수로 선언
+			var joinusername = sUser.username.value;
+			var url = "./gamesignup_1.jsp?username="+joinusername;
+			window.location.href="http://webdev.iptime.org:8080/kgy/gamesignup_1.jsp?username="+joinusername;
+         
+            }
 	</script>
 </head>
 <body>
-	<form action="gamecheckUsername.jsp" id="checkform">
+	<form method="post" action="gamecheckUsername.jsp" id="checkform" name="checkform">
 		<%
 		try{
 			if(rs.next()){
 			%>
-				현재 <%=username%>은 사용 중입니다.<br><br>
-				닉네임 : <input type="text" name="username"></input>
-				<input type="submit" value="중복확인"></input>
+				<script>
+				alert('현재 <%=username%> 는 사용 불가입니다');
+				window.location.href="http://webdev.iptime.org:8080/kgy/gamesignup.html";
+				</script>
 				<%
 			}
 			else
 		{
 			%>
-			<%=username%>은 사용 가능합니다.
-			<input type="button" value="사용하기" onClick="btnClose('<?=$username?>')">
+			<input type="text" value="<%=username%>" name="username" id="username" class="username">은 사용가능합니다.<br>
+			
+			<input type="button" value="사용하기" onClick="javascript:btnClose()">
 			<%
 		}
 	}catch(SQLException e){e.printStackTrace();}
