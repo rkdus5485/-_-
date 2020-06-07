@@ -119,7 +119,7 @@ body {
 				<tr>
 					<div class="form-label-group">
 					<label for="inputEmail">Username</label>
-					<input type="text" name="username" id="username" class="username" value="<%=username%>" placeholder="닉네임">
+					<input type="text" name="username" id="username" class="username" value="<%=username%>" placeholder="닉네임" readOnly />
 					<input type="button" value="중복확인" id="check" onClick="javascript:checkUsername()">
 					</div>
 					<div class="form-label-group">
