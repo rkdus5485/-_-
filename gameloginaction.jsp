@@ -10,6 +10,9 @@
 <%@ page import = "java.io.PrintWriter" %>
 
 <%
+	//username 한글일 경우도 가능
+	request.setCharacterEncoding("utf-8");
+	
 	String userid = request.getParameter("userid");
 	String userpw = request.getParameter("userpw");
 
