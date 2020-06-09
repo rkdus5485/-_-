@@ -35,7 +35,7 @@
 			rs = ps.executeQuery();
 			
 
-		if(userid == null){
+		if(username == null){
 		
 	%>
 
@@ -300,7 +300,7 @@
 							 <INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="minutes" VALUE="00" SIZE=3  >
 									 <input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=1 value=":">
 							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="seconds" VALUE="00" SIZE=3 >
-										<input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=1 value=":">
+									<input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" size=1 value=":">
 							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;" NAME="milsecs" VALUE="00" SIZE=3 >
 							 </TD>
 							</TR>
@@ -319,16 +319,33 @@
 		<div>
 			<div id='username' name='username' ><%=username%>
 
-                	</div>
+                </div>
                 <%
 				if(rs.next()){
 					String time = rs.getString("time");
+					int length = time.length();
+					if(length == 4) {
+					%>
+						<div id='maxtime' name='maxtime'><%=time.substring(0,2)%> : <%=time.substring(2,4)%> </div><br><br>
+							
+					<%
+					}else if(length == 5){
+						%>
+								<div id='maxtime' name='maxtime'>0<%=time.substring(0,1)%> : <%=time.substring(1,3)%> : <%=time.substring(3,5)%></div><br><br>
+						
+						<%						
+					}
+					else if(length == 6) {
+						%>
+							<div id='maxtime' name='maxtime'><%=time.substring(0,2)%> : <%=time.substring(2,4)%> : <%=time.substring(4,6)%></div><br><br>
+						<%
+					}
+				}
+					
+
 					
 				%>
-			
-		<div id='maxtime' name='maxtime'><%=time%>
-			<%}%>
-		</div><br><br>
+				
                   <table id="menuTable">
                     <tr>
                         <td class='alignLeft'>
