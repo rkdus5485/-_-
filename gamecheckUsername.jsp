@@ -14,7 +14,7 @@
 <html lang="ko">
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>이메일 중복확인</title>
+	<title>닉네임 중복확인</title>
 
 <%
 	Connection conn = null;
@@ -27,7 +27,7 @@
 	try{
 		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
 		String dbUser = "kgy";
-			String dbPass = "kgy1234";
+		String dbPass = "kgy1234";
 
 		conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 		pstmt = conn.prepareStatement("select GameUsername from login_game where GameUsername=?");
