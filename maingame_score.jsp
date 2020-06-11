@@ -64,7 +64,8 @@
         #cardTable td{border: 1px solid #42423E; width: 110px; height: 121px; text-align: center; cursor: pointer;}
         #cardTable td img{max-width: 110px;}
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
-        #countDown{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem;}
+        #countDown{background-color: #42423E; color: white; font-size: 20pt; width: 320px; border-radius: 1rem; float:left;}
+	#exit{background-color:red; color: white; font-size: 20pt; width: 50px; border-radius: 1rem; float:left;}
 	#username{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
         #info{width: 469px; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
 	#maxscore{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left}
@@ -278,6 +279,7 @@
             <div>
                 <div id='countDown'>준비
                 </div>
+		<div id='exit'>X</div><br><br>
                 <table id='cardTable'>
                 </table>
                 <div id='info'>
