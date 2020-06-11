@@ -61,7 +61,8 @@
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
 	#username{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
 	#maxtime{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
-        #countDown{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem;}
+  	#countDown{background-color: #42423E; color: white; font-size: 20pt; width: 320px; border-radius: 1rem; float:left;}
+    	#exit{background-color:red; color: white; font-size: 20pt; width: 50px; border-radius: 1rem; float:left;}
 	#countupbar{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem; text-align: center;}
         #info{width: 469px; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
 
@@ -309,7 +310,7 @@
 				</div>
                 <div id='countDown'>준비
                 </div>
-				
+		<div id='exit' onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'">X</div><br><br>		
                 <table id='cardTable'>
                 </table>
                 <div id='info'>
