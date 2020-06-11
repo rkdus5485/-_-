@@ -279,7 +279,7 @@
             <div>
                 <div id='countDown'>준비
                 </div>
-		<div id='exit'>X</div><br><br>
+		<div id='exit' onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'">X</div><br><br>
                 <table id='cardTable'>
                 </table>
                 <div id='info'>
