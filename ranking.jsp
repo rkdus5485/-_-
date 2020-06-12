@@ -190,11 +190,11 @@ body {
               <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
               <br>
               <td class='alignRight'>
-                            <button id='scoreBtn'>3등 : ★★★</button>
+                            <button id='scoreBtn'>3등 : <%=p_username_3%> <%=point_3%>점 </button>
               <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : ★★★</button>
+                            <button id='scoreBtn'>1등 : <%=p_username_1%> <%=point_1%>점</button>
               <td class='alignRight'>
-                            <button id='scoreBtn'>2등 : ★★★</button></td>
+                            <button id='scoreBtn'>2등 : <%=p_username_2%> <%=point_2%>점</button></td>
               <hr class="my-4">
               <h5 class="card-title text-center">4# ○○○ ☆☆☆점</h5>
               <h5 class="card-title text-center">Timer mode</h5>
@@ -203,11 +203,11 @@ body {
               <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
               <br>
               <td class='alignRight'>
-                            <button id='scoreBtn'>3등 : ★★★ </button>
+                            <button id='scoreBtn'>3등 : <%=username_3%> <%=time_3%></button>
               <td class='alignRight'>
-                            <button id='scoreBtn'>1등 :  ★★★</button>
+                            <button id='scoreBtn'>1등 : <%=username_1%> <%=time_1%></button>
               <td class='alignRight'>
-                            <button id='scoreBtn'>2등 : ★★★</button></td>
+                            <button id='scoreBtn'>2등 : <%=username_2%> <%=time_2%></button></td>
 			
             </form>
           </div>
