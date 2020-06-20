@@ -42,14 +42,13 @@ public class ForRank {
 				Usernamefortimer.add(GameUsername);
 				timer.add(time);
 			}
-			int i;
 			String[] t_loc = new String[3];
 			String[] uname = new String[3];
-			int[] count = new int[1];
-			String tmp;
-			tmp = "10000000000";
+			int[] count = new int[3];
+			
+			String tmp = "100000000";
 			//fine 1st
-			for(i = 0; i <timer.size(); i++) {
+			for(int i = 0; i <timer.size(); i++) {
 				if(Integer.parseInt(tmp) > Integer.parseInt(timer.get(i))) {
 					tmp = timer.get(i);
 					t_loc[0] = tmp;
@@ -59,36 +58,39 @@ public class ForRank {
 			}
 			Usernamefortimer.remove(count[0]);
 			timer.remove(count[0]);
+
 			
 			//find 2nd
-			for(i = 0; i<timer.size(); i++) {
-				if(Integer.parseInt(tmp) > Integer.parseInt(timer.get(i))) {
-					tmp = timer.get(i);
-					t_loc[1] = tmp;
+			String temp = "100000000";
+			for(int i = 0; i<timer.size(); i++) {
+				if(Integer.parseInt(temp) > Integer.parseInt(timer.get(i))) {
+					temp = timer.get(i);
+					t_loc[1] = temp;
 					uname[1] = Usernamefortimer.get(i);
-					count[0] = i;
+					count[1] = i;
 				}
-			}
-			Usernamefortimer.remove(count[0]);
-			timer.remove(count[0]);
+			};
+			Usernamefortimer.remove(count[1]);
+			timer.remove(count[1]);
 			
 			//find 3rd
-			for(i = 0; i<timer.size(); i++) {
-				if(Integer.parseInt(tmp) > Integer.parseInt(timer.get(i))) {
-					tmp = timer.get(i);
-					t_loc[2] = tmp;
+			String temp_ = "100000000";
+			for(int i = 0; i<timer.size(); i++) {
+				if(Integer.parseInt(temp_) > Integer.parseInt(timer.get(i))) {
+					temp_ = timer.get(i);
+					t_loc[2] = temp_;
 					uname[2] = Usernamefortimer.get(i);
-					count[0] = i;
+					count[2] = i;
 				}
 			}
-			Usernamefortimer.remove(count[0]);
-			timer.remove(count[0]);
+			Usernamefortimer.remove(count[2]);
+			timer.remove(count[2]);
 			
 
 			
-			System.out.println("1등 : "+uname[0] +"점수 : "+ t_loc[0]);
-			System.out.println("2등 : "+uname[1] +"점수 : "+ t_loc[1]);
-			System.out.println("3등 : "+uname[2] +"점수 : "+ t_loc[2]);
+			System.out.println("1등 : "+uname[0] +" 점수 : "+ t_loc[0]);
+			System.out.println("2등 : "+uname[1] +" 점수 : "+ t_loc[1]);
+			System.out.println("3등 : "+uname[2] +" 점수 : "+ t_loc[2]);
 			
 			//point 모드 
 			r = stmt.executeQuery(SQL_point);
@@ -104,7 +106,7 @@ public class ForRank {
 			String point1;
 			point1 = "0";
 			
-			for(i = 0; i <pointer.size(); i++) {
+			for(int i = 0; i <pointer.size(); i++) {
 				if(Integer.parseInt(point1) < Integer.parseInt(pointer.get(i))) {
 					point1 = pointer.get(i);
 					p_loc[0] = point1;
@@ -116,10 +118,11 @@ public class ForRank {
 			pointer.remove(count_p[0]);
 			
 			//find 2nd
-			for(i = 0; i <pointer.size(); i++) {
-				if(Integer.parseInt(point1) < Integer.parseInt(pointer.get(i))) {
-					point1 = pointer.get(i);
-					p_loc[1] = point1;
+			String point_2 = "0";
+			for(int i = 0; i <pointer.size(); i++) {
+				if(Integer.parseInt(point_2) < Integer.parseInt(pointer.get(i))) {
+					point_2 = pointer.get(i);
+					p_loc[1] = point_2;
 					puname[1] = Usernameforpoint.get(i);
 					count_p[0] = i;
 				}
@@ -128,10 +131,11 @@ public class ForRank {
 			pointer.remove(count_p[0]);
 			
 			//find 3rd
-			for(i = 0; i <pointer.size(); i++) {
-				if(Integer.parseInt(point1) < Integer.parseInt(pointer.get(i))) {
-					point1 = pointer.get(i);
-					p_loc[2] = point1;
+			String point3 = "0";
+			for(int i = 0; i <pointer.size(); i++) {
+				if(Integer.parseInt(point3) < Integer.parseInt(pointer.get(i))) {
+					point3 = pointer.get(i);
+					p_loc[2] = point3;
 					puname[2] = Usernameforpoint.get(i);
 					count_p[0] = i;
 				}
