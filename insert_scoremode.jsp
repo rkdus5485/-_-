@@ -60,9 +60,13 @@
 					}
 				}
 				%>
+						
 					<script>
-						window.location.href="http://webdev.iptime.org:8080/kgy/gamesignin.html";
-					</script>	
+						var point = <%=point%>;
+						window.location.href="http://webdev.iptime.org:8080/kgy/Scoreend.jsp?point="+point;
+					</script>
+					
+					
 				<%
 				
 				
