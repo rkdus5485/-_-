@@ -1,14 +1,13 @@
 package sql;
 
-import java.math.BigDecimal;
-import java.security.Timestamp;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.io.PrintWriter;
+import java.sql.Statement;
 
 public class Select_Timermode {
 	private Connection conn;   
