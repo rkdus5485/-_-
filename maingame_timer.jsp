@@ -242,9 +242,7 @@
                         if(++openedCtn == 10){
                             keepgoin=false;
 				gameState=''; 
-                            alert('시간 '+Strmin+':'+Strsec+':'+Strmil);
-			    var gametime= Strmin*10000+Strsec*100+Strmil*1;
-			    //alert(gametime);
+                            var gametime= Strmin*10000+Strsec*100+Strmil*1;
 			    window.location.href="http://webdev.iptime.org:8080/kgy/insert_timermode.jsp?time="+gametime;
 
                         }
