@@ -29,15 +29,6 @@
 			ps = conn.prepareStatement(query);
 			rs=ps.executeQuery();
 
-
-		
-
-		String query ="select GameUsername from login_game where GameID='"+userid+"'";
-
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(query);
-			
-
 		if(username == null){
 		
 	%>
