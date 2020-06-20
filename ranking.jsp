@@ -18,11 +18,19 @@
     ResultSet rs = null;
     ResultSet r = null;
 
-		ArrayList<String> Usernamefortimer = new ArrayList();
-		ArrayList<String> Usernameforpoint = new ArrayList();
-		ArrayList<String> timer = new ArrayList();
-		ArrayList<String> point = new ArrayList();
-
+		ArrayList<String> Usernamefortimer_1 = new ArrayList();
+		ArrayList<String> Usernamefortimer_2 = new ArrayList();
+		ArrayList<String> Usernamefortimer_3 = new ArrayList();
+		ArrayList<String> Usernameforpoint_1 = new ArrayList();
+		ArrayList<String> Usernameforpoint_2 = new ArrayList();
+		ArrayList<String> Usernameforpoint_3 = new ArrayList();
+		ArrayList<String> timer_1 = new ArrayList();
+		ArrayList<String> timer_2 = new ArrayList();
+		ArrayList<String> timer_3 = new ArrayList();
+		ArrayList<String> point_1 = new ArrayList();
+		ArrayList<String> point_2 = new ArrayList();
+		ArrayList<String> point_3 = new ArrayList();
+ 
     
 		// TODO Auto-generated constructor stub
 		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
@@ -43,81 +51,185 @@
 			while (rs.next()) {
 				String GameUsername = rs.getString("GameUsername");
 				String time = rs.getString("time");
-				Usernamefortimer.add(GameUsername);
-				timer.add(time);
+				Usernamefortimer_1.add(GameUsername);
+				timer_1.add(time);
 			}
 			int i;
-			int[] t_loc = new int[3];
+		
+			String[] t_loc = new String[3];
+			String[] uname = new String[3];
 			String tmp;
-			tmp = "1000000";
-			//fine 1st
-			for(i = 0; i < timer.size(); i++) {
-				if(Integer.parseInt(tmp) > Integer.parseInt(timer.get(i))) {
-					tmp = timer.get(i);
-					t_loc[0] = i;
-				}
-			}
-			//find 2nd
-			for(i = 0; i < timer.size(); i++) {
-				if(Integer.parseInt(tmp) > Integer.parseInt(timer.get(i)) && Integer.parseInt(timer.get(i)) >= Integer.parseInt(timer.get(t_loc[0]))) {
-					tmp = timer.get(i);
-					t_loc[1] = i;
-				}
-			}
-			//find 3rd
-			for(i = 0; i < timer.size(); i++) {
-				if(Integer.parseInt(tmp) > Integer.parseInt(timer.get(i)) && Integer.parseInt(timer.get(i)) >= Integer.parseInt(timer.get(t_loc[1]))) {
-					tmp = timer.get(i);
-					t_loc[2] = i;
+			tmp = "10000000";
+			
+			//find 1st
+			for(i = 0; i < timer_1.size(); i++) {
+				if(Integer.parseInt(tmp) > Integer.parseInt(timer_1.get(i))) {
+					tmp = timer_1.get(i);
+					uname[0] = Usernamefortimer_1.get(i);
+					t_loc[0] = tmp;
 				}
 			}
 
-			String username_1 = Usernamefortimer.get(t_loc[0]);
-			String time_1 = timer.get(t_loc[0]);
-			String username_2 = Usernamefortimer.get(t_loc[1]);
-			String time_2 = timer.get(t_loc[1]);
-			String username_3 = Usernamefortimer.get(t_loc[2]);
-			String time_3 = timer.get(t_loc[2]);
+			for(i = 0; i <timer_1.size(); i++) {
+				if(t_loc[0] == timer_1.get(i)) {
+					if(uname[0] == timer_1.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					timer_2.add(timer_1.get(i));
+				}
+			}
+
+			for(i = 0; i <Usernamefortimer_1.size(); i++) {
+				if(t_loc[0] == timer_1.get(i)) {
+					if(uname[0] == Usernamefortimer_1.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					Usernamefortimer_2.add(Usernamefortimer_1.get(i));
+				}
+			}
+
+			//find 2nd
+			for(i = 0; i < timer_2.size(); i++) {
+				if(Integer.parseInt(tmp) > Integer.parseInt(timer_2.get(i)) && Integer.parseInt(timer_2.get(i)) >= Integer.parseInt(t_loc[0])) {
+					tmp = timer_2.get(i);
+					uname[1] = Usernamefortimer_2.get(i);
+					t_loc[1] = tmp;
+				}
+			}
+
+			for(i = 0; i <timer_2.size(); i++) {
+				if(t_loc[1] == timer_2.get(i)) {
+					if(uname[1] == Usernamefortimer_2.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					timer_3.add(timer_2.get(i));
+				}
+			}
+
+			for(i = 0; i <Usernamefortimer_2.size(); i++) {
+				if(t_loc[1] == timer_2.get(i)) {
+					if(uname[1] == Usernamefortimer_2.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					Usernamefortimer_3.add(Usernamefortimer_2.get(i));
+				}
+			}
+
+			//find 3rd
+			for(i = 0; i < timer_3.size(); i++) {
+				if(Integer.parseInt(tmp) > Integer.parseInt(timer_3.get(i)) && Integer.parseInt(timer_3.get(i)) >= Integer.parseInt(t_loc[1])) {
+					tmp = timer_3.get(i);
+					uname[2] = Usernamefortimer_3.get(i);
+					t_loc[2] = tmp;
+				}
+			}
+
+			String username_1 = uname[0];
+			String time_1 = t_loc[0];
+			String username_2 = uname[1];
+			String time_2 = t_loc[1];
+			String username_3 = uname[2];
+			String time_3 = t_loc[2];
 
 			//point 모드
 			r = stmt.executeQuery(SQL_point);
 			while (r.next()) {
 				String GameUsername = r.getString("GameUsername");
 				String point_s = r.getString("point");
-				Usernameforpoint.add(GameUsername);
-				point.add(point_s);
+				Usernameforpoint_1.add(GameUsername);
+				point_1.add(point_s);
 			}
-			int[] p_loc = new int[3];
+			String[] puname = new String[3];
+			String[] p_loc = new String[3];
 			String point1;
 			point1 = "0";
 
-			for(i = 0; i < point.size(); i++) {
-				if(Integer.parseInt(point1) > Integer.parseInt(point.get(i))) {
-					point1 = point.get(i);
-					p_loc[0] = i;
-				}
-			}
-			//find 2nd
-			for(i = 0; i < point.size(); i++) {
-				if(Integer.parseInt(point1) > Integer.parseInt(point.get(i)) && Integer.parseInt(point.get(i)) >= Integer.parseInt(point.get(p_loc[0]))) {
-					point1 = point.get(i);
-					p_loc[1] = i;
-				}
-			}
-			//find 3rd
-			for(i = 0; i < point.size(); i++) {
-				if(Integer.parseInt(point1) > Integer.parseInt(point.get(i)) && Integer.parseInt(point.get(i)) >= Integer.parseInt(point.get(p_loc[1]))) {
-					point1 = point.get(i);
-					p_loc[2] = i;
+			//find 1st
+			for(i = 0; i < point_1.size(); i++) {
+				if(Integer.parseInt(point1) < Integer.parseInt(point_1.get(i))) {
+					point1 = point_1.get(i);
+					p_loc[0] = point1;
+					puname[0] = Usernameforpoint_1.get(i);
+
 				}
 			}
 
-			String p_username_1 = Usernameforpoint.get(p_loc[0]);
-			String point_1 = point.get(p_loc[0]);
-			String p_username_2 = Usernameforpoint.get(p_loc[1]);
-			String point_2 = point.get(p_loc[1]);
-			String p_username_3 = Usernameforpoint.get(p_loc[2]);
-			String point_3 = point.get(p_loc[2]);
+			for(i = 0; i <point_1.size(); i++) {
+				if(p_loc[0] == point_1.get(i)) {
+					if(puname[0] == point_1.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					point_2.add(point_1.get(i));
+				}
+			}
+
+			for(i = 0; i <Usernameforpoint_1.size(); i++) {
+				if(p_loc[0] == point_1.get(i)) {
+					if(uname[0] == Usernameforpoint_1.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					Usernameforpoint_2.add(Usernameforpoint_1.get(i));
+				}
+			}
+			//find 2nd
+			for(i = 0; i < point_2.size(); i++) {
+				if(Integer.parseInt(point1) < Integer.parseInt(point_2.get(i)) && Integer.parseInt(point_2.get(i)) <= Integer.parseInt(p_loc[0])) {
+					point1 = point_2.get(i);
+					p_loc[1] = point1;
+					puname[1] = Usernameforpoint_2.get(i);
+				}
+			}
+
+			for(i = 0; i <point_2.size(); i++) {
+				if(p_loc[1] == point_2.get(i)) {
+					if(puname[1] == Usernameforpoint_2.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					point_3.add(point_2.get(i));
+				}
+			}
+
+			for(i = 0; i <Usernameforpoint_2.size(); i++) {
+				if(p_loc[1] == point_2.get(i)) {
+					if(uname[1] == Usernameforpoint_2.get(i)) {
+						//nothing
+					}
+				}
+				else {
+					Usernameforpoint_3.add(Usernameforpoint_2.get(i));
+				}
+			}
+
+			//find 3rd
+			for(i = 0; i < point_3.size(); i++) {
+				if(Integer.parseInt(point1) < Integer.parseInt(point_3.get(i)) && Integer.parseInt(point_3.get(i)) <= Integer.parseInt(p_loc[1])) {
+					point1 = point_3.get(i);
+					p_loc[2] = point1;
+					puname[2] = Usernameforpoint_3.get(i);
+				}
+			}
+
+
+			String p_username_1 = puname[0];
+			String points_1 = p_loc[0];
+			String p_username_2 = puname[1];
+			String points_2 = p_loc[1];
+			String p_username_3 = puname[2];
+			String points_3 = p_loc[2];
 
 		
 		%>
@@ -179,36 +291,31 @@ body {
             <h5 class="card-title text-center">Ranking</h5>
             <form class="form-signin">
             <hr class="my-4">
-              <h5 class="card-title text-center">1등 ★★★점</h5>
-              <hr class="my-4">
-              <h5 class="card-title text-center">2등 ★★★점</h5>
-              <hr class="my-4">
-              <h5 class="card-title text-center">3등 ★★★점</h5>
               <h5 class="card-title text-center">Score mode</h5>
-              <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
-              <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
-              <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
+
+			  <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="200px" >
+              
               <br>
               <td class='alignRight'>
-                            <button id='scoreBtn'>3등 : <%=p_username_3%> <%=point_3%>점 </button>
+                            <button id='scoreBtn'>3등 : <%=p_username_3%> <%=points_3%>점 </button>
               <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : <%=p_username_1%> <%=point_1%>점</button>
+                             <button id='scoreBtn'>1등 : <%=p_username_1%> <%=points_1%>점</button>
               <td class='alignRight'>
-                            <button id='scoreBtn'>2등 : <%=p_username_2%> <%=point_2%>점</button></td>
-              <hr class="my-4">
-              <h5 class="card-title text-center">4# ○○○ ☆☆☆점</h5>
+                            <button id='scoreBtn'>2등 : <%=p_username_2%> <%=points_2%>점</button></td>
+              <br><br>
+        
               <h5 class="card-title text-center">Timer mode</h5>
-              <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
-              <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
-              <img src = "https://data.silhouette-ac.com/data/thumbnails/a8/a89250c3a9e3e5dad77b8f52f0b9ca94_w.jpeg" width="200px" >
+               <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="200px" >
+              
               <br>
               <td class='alignRight'>
                             <button id='scoreBtn'>3등 : <%=username_3%> <%=time_3%></button>
               <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : <%=username_1%> <%=time_1%></button>
+                           <button id='scoreBtn'>1등 : <%=username_1%> <%=time_1%></button>
               <td class='alignRight'>
                             <button id='scoreBtn'>2등 : <%=username_2%> <%=time_2%></button></td>
-			
+              <br><br>
+			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="종료하기" id=scoreBtn style="background-color:red"></button>
             </form>
           </div>
         </div>
