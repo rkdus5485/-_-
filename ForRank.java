@@ -102,7 +102,7 @@ public class ForRank {
 			}
 			String[] puname = new String[3];
 			String[] p_loc = new String[3];
-			int[] count_p = new int[1];
+			int[] count_p = new int[3];
 			String point1;
 			point1 = "0";
 			
@@ -124,11 +124,11 @@ public class ForRank {
 					point_2 = pointer.get(i);
 					p_loc[1] = point_2;
 					puname[1] = Usernameforpoint.get(i);
-					count_p[0] = i;
+					count_p[1] = i;
 				}
 			}
-			Usernameforpoint.remove(count_p[0]);
-			pointer.remove(count_p[0]);
+			Usernameforpoint.remove(count_p[1]);
+			pointer.remove(count_p[1]);
 			
 			//find 3rd
 			String point3 = "0";
@@ -137,11 +137,11 @@ public class ForRank {
 					point3 = pointer.get(i);
 					p_loc[2] = point3;
 					puname[2] = Usernameforpoint.get(i);
-					count_p[0] = i;
+					count_p[2] = i;
 				}
 			}
-			Usernameforpoint.remove(count_p[0]);
-			pointer.remove(count_p[0]);
+			Usernameforpoint.remove(count_p[2]);
+			pointer.remove(count_p[2]);
 			
 			
 			
