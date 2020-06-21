@@ -118,19 +118,21 @@ body {
 				<table>
 				<tr>
 					<div class="form-label-group">
-					<label for="inputEmail">Username</label>
-					<input type="text" name="username" id="username" class="username" value="<%=username%>" placeholder="닉네임" readOnly />
-					<input type="button" value="중복확인" id="check" onClick="javascript:checkUsername()">
-					</div>
+					<td><label for="inputEmail">Username</label></td>
+					<td><input type="text" name="username" id="username" class="username" value="<%=username%>" placeholder="닉네임" readOnly /></td>
+					<td><input type="button" value="중복확인" id="check" onClick="javascript:checkUsername()">
+					</td></div></tr>
+					<tr>
 					<div class="form-label-group">
-					<label for="inputPassword">Password</label>
-					<input type="password" id="userpw" name="userpw" class="userpw" placeholder="비밀번호" required>
+					<td><label for="inputPassword">Password</label></td>
+					<td><input type="password" id="userpw" name="userpw" class="userpw" placeholder="비밀번호" required></td>
 					</div>
 					<br>
 				</tr>
 				</table>
-			<input type="submit" value="가입하기" onClick="javascript:signup()" />
-			<input type="reset" value="다시쓰기" />
+			<tr><input type="submit" value="가입하기" onClick="javascript:signup()" />
+			<input type="reset" value="다시쓰기" /><br>
+			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/initialpage.html'" value="종료하기" class="btn btn-lg btn-primary btn-block text-uppercase" style=background-color:red></button></tr>
         <br>
         <br>
      </form>
