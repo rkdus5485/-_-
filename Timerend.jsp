@@ -150,6 +150,7 @@ body {
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
+  font-size:50px;
 }
 .card-signin .card-body {
   padding: 2rem;
