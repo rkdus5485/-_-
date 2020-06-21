@@ -88,21 +88,24 @@ body {
 		<div class="card card-signin my-5">
           		<h2>회원가입</h2>
            <form class="form-signin">
-				<table>
+				<table align="center">
 				<tr>
 					<div class="form-label-group">
-					<label for="inputEmail">Username</label>
-					<input type="text" name="username" id="username" class="username" placeholder="닉네임">
-					<input type="button" value="중복확인" onClick="javascript:checkUsername()">
+					
+					<td><label for="inputEmail">Username</label></td>
+					<td><input type="text" name="username" id="username" class="username" placeholder="닉네임"></td>
+					<td><input type="button" value="중복확인" onClick="javascript:checkUsername()"></td>
 					</div>
+					</tr>
+					<tr>
 					<div class="form-label-group">
-					<label for="inputPassword">Password</label>
-					<input type="password" id="userpw" name="userpw" class="userpw" placeholder="비밀번호" required>              
+					<td><label for="inputPassword">Password</label></td>
+					<td><input type="password" id="userpw" name="userpw" class="userpw" placeholder="비밀번호" required> </td>             
 					</div>
 					<br>
-				</tr>
-				</table>
-			<input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" /><input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/initialpage.html'" value="종료하기" class="btn btn-lg btn-primary btn-block text-uppercase" style=background-color:red></button>
+				</tr></table>
+			<tr><input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" /><br>
+		   <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/initialpage.html'" value="종료하기" class="btn btn-lg btn-primary btn-block text-uppercase" style=background-color:red></button></tr>
         <br>
         <br>
      </form>
