@@ -227,22 +227,22 @@ body {
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <form class="form-signin"><input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="종료하기" id=scoreBtn style="background-color:red; float:right;"></button><br>
+            <form class="form-signin"><input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="종료하기" id=scoreBtn style="background-color:red; float:right;"></button><br><br>
               <span class="card-title text-center">Score Ranking</span>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg height="200px" width="80%" >
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg height="175px" width="80%" >
 
               <br>
               <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : <%=p_username_1%> <%=points_1%>점 </button>
+                            <button id='scoreBtn'>1등 : <%=p_username_1%><br><%=points_1%>점 </button>
 							<br><br>
               <td class='alignRight'>
-							<button id='scoreBtn2'>2등 : <%=p_username_2%> <%=points_2%>점 </button>
+							<button id='scoreBtn2'>2등 : <%=p_username_2%><br><%=points_2%>점 </button>
               <td class='alignRight'>
-                            <button id='scoreBtn2'>3등 : <%=p_username_3%> <%=points_3%>점 </button>
+                            <button id='scoreBtn2'>3등 : <%=p_username_3%><br><%=points_3%>점 </button>
               <br>
           <hr class="my-4">
               <div class="card-title text-center">Timer Ranking</div>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg height="200px" width="80%" >
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg height="175px" width="80%" >
               <br>
                                <td class='alignRight'>
                             <button id='scoreBtn'>1등 : <%=username_1%><%
