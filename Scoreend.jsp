@@ -123,6 +123,7 @@ background-color: #999999;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
+	  width:40%;
 }
   
 #scoreBtn{
@@ -132,6 +133,7 @@ background-color: #999999;
   font-size:20px;
   background-color: #42423E;
   padding: 5px;
+width:40%;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
