@@ -117,7 +117,6 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
-
 body {
   background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF);
@@ -134,7 +133,6 @@ body {
   border-collapse: collapse;
   display: inline-block;
 }
-
 .card-signin {
   border: 0;
   border-radius: 1rem;
@@ -142,17 +140,14 @@ body {
   text-align: center;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
-
 .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
 }
-
 .card-signin .card-body {
   padding: 2rem;
 }
-
 .form-signin {
   width: 100%;
 }
@@ -176,11 +171,11 @@ body {
               
               <br>
               <td class='alignRight'>
-                            <button id='scoreBtn'>3등 : <%=p_username_3%> <%=points_3%>점 </button>
-              <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : <%=p_username_1%> <%=points_1%>점 </button>
+                            <button id='scoreBtn'>1등 : <%=p_username_1%> <%=points_1%>점 </button><br><br>
               <td class='alignRight'>
                             <button id='scoreBtn'>2등 : <%=p_username_2%> <%=points_2%>점 </button>
+              <td class='alignRight'>
+                            <button id='scoreBtn'>3등 : <%=p_username_3%> <%=points_3%>점 </button>
               <br><br>
 			<td class='alignRight'>
                             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/maingame_score.jsp'" value="다시하기" id='scoreBtn'></td></td>
