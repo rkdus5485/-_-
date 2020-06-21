@@ -298,13 +298,14 @@
 						  <TR>
 							<TD COLSPAN=3>
 							<DIV align="center">
+							<INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold; width: 5%;" NAME="minutes">
 
-							 <INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold; width: 25%;" NAME="minutes"VALUE="00">
-									 <input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;width: 8%;" value=":">
-							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;width: 25%;" NAME="seconds" VALUE="00">
-										<input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;width: 8%;"  value=":">
-							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;width: 25%;" NAME="milsecs" VALUE="00">
-							 </TD>
+							 <INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;text-align: center;font-weight:bold; width: 20%;" NAME="minutes"VALUE="00">
+									 <input type="text" style="border: none; text-align: center;background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;width: 8%;" value=":">
+							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;text-align: center;font-weight:bold;width: 20%;" NAME="seconds" VALUE="00">
+										<input type="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold;text-align: center;width: 8%;"  value=":">
+							 <INPUT TYPE="text"style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;text-align: center;font-weight:bold;width: 20%;" NAME="milsecs" VALUE="00">
+							 <INPUT TYPE="text" style="border: none; background: transparent;font-size:12pt; color:#FFFFFF;font-weight:bold; width: 5%;" NAME="minutes">							 </TD>
 							</TR>
 							</TABLE>
 						</FORM>
