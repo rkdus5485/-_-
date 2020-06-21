@@ -23,8 +23,8 @@
 		ArrayList<String> timer = new ArrayList();
 		ArrayList<String> pointer = new ArrayList();
 
- 
-    
+
+
 		// TODO Auto-generated constructor stub
 		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
 		String dbUser = "kgy";
@@ -48,13 +48,13 @@
 				timer.add(time);
 			}
 			int i;
-		
+
 			String[] t_loc = new String[3];
 			String[] uname = new String[3];
 			int[] count = new int[3];
 			String tmp;
 			tmp = "10000000";
-			
+
 			//find 1st
 			for(i = 0; i < timer.size(); i++) {
 				if(Integer.parseInt(tmp) > Integer.parseInt(timer.get(i))) {
@@ -102,9 +102,9 @@
 
 			//point 모드
 			r = stmt.executeQuery(SQL_point);
-			while (r.next()) { 
-				String GameUsername = r.getString("GameUsername"); 
-				String point = r.getString("point"); 
+			while (r.next()) {
+				String GameUsername = r.getString("GameUsername");
+				String point = r.getString("point");
 				Usernameforpoint.add(GameUsername);
 				pointer.add(point);
 			}
@@ -125,7 +125,7 @@
 			}
 			Usernameforpoint.remove(count_p[0]);
 			pointer.remove(count_p[0]);
-			
+
 			//find 2nd
 			String point_2="0";
 			for(i = 0; i < pointer.size(); i++) {
@@ -138,7 +138,7 @@
 			}
 			Usernameforpoint.remove(count_p[1]);
 			pointer.remove(count_p[1]);
-			
+
 			//find 3rd
 			String point3="0";
 			for(i = 0; i <pointer.size(); i++) {
@@ -151,7 +151,7 @@
 			}
 			Usernameforpoint.remove(count_p[2]);
 			pointer.remove(count_p[2]);
-			
+
 
 
 			String p_username_1 = puname[0];
@@ -161,7 +161,7 @@
 			String p_username_3 = puname[2];
 			String points_3 = p_loc[2];
 
-		
+
 		%>
 <html lang="en">
  <head>
@@ -180,20 +180,22 @@ body {
   border: 0;
   border-radius: 1rem;
   color: white;
-  font-size:33px;
+  font-size:15px;
   background-color: #666660;
+  /*width: 400px;*/
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
 }
-  
+
 #scoreBtn{
   border: 0;
   border-radius: 1rem;
   color: white;
-  font-size:33px;
+  font-size:15px;
   background-color: #42423E;
+  /*width: 400px;*/
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
@@ -207,13 +209,13 @@ body {
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 .card-signin .card-title {
-  margin-bottom: 2rem;
-  font-weight: 300%;
+  margin-bottom: 1rem;
+  font-weight: 100%;
   font-size: 1.5rem;
-  font-size:50px;
+  font-size:25px;
 }
 .card-signin .card-body {
-  padding: 2rem;
+  padding: 1rem;
 }
 .form-signin {
   width: 100%;
@@ -225,33 +227,30 @@ body {
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <form class="form-signin">
+            <form class="form-signin"><input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="종료하기" id=scoreBtn style="background-color:red; float:right;"></button><br>
+              <span class="card-title text-center">Score Mode</span>
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg height="200px" width="80%" >
 
-              <h5 class="card-title text-center">Score Mode</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="50%" >
-              
               <br>
               <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : <%=p_username_1%> <br><%=points_1%>점 </button><br><br>
+                            <button id='scoreBtn'>1등 : <%=p_username_1%> <%=points_1%>점 </button>
+							<br><br>
               <td class='alignRight'>
-                            <button id='scoreBtn2'>2등 : <%=p_username_2%><br> <%=points_2%>점 </button>
+							<button id='scoreBtn2'>2등 : <%=p_username_2%> <%=points_2%>점 </button>
               <td class='alignRight'>
-                            <button id='scoreBtn2'>3등 : <%=p_username_3%> <br><%=points_3%>점 </button>
-              <br><br>
-              <br><br>
+                            <button id='scoreBtn2'>3등 : <%=p_username_3%> <%=points_3%>점 </button>
+              <br>
           <hr class="my-4">
-              <h5 class="card-title text-center">Timer Ranking</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="50%" >
-              
+              <div class="card-title text-center">Timer Ranking</div>
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg height="200px" width="80%" >
               <br>
-              
                                <td class='alignRight'>
                             <button id='scoreBtn'>1등 : <%=username_1%><%
 					int length_1 = time_1.length();
 					if(length_1 == 4) {
 					%>
 						<div id='maxtime' name='maxtime'>00 : <%=time_1.substring(0,2)%> : <%=time_1.substring(2,4)%> </div>
-	
+
 					<%
 					}else if(length_1 == 5){
 						%>
@@ -271,14 +270,14 @@ body {
 			  %>
 							</button>
                               <br><br>
-             
+
               <td class='alignRight'>
                             <button id='scoreBtn2'>2등 : <%=username_2%><%
 					int length_2 = time_2.length();
 					if(length_2 == 4) {
 					%>
 						<div id='maxtime' name='maxtime'>00 : <%=time_2.substring(0,2)%> : <%=time_2.substring(2,4)%> </div>
-	
+
 					<%
 					}else if(length_2 == 5){
 						%>
@@ -302,7 +301,7 @@ body {
 					if(length_3 == 4) {
 					%>
 						<div id='maxtime' name='maxtime'>00 : <%=time_3.substring(0,2)%> : <%=time_3.substring(2,4)%> </div>
-	
+
 					<%
 					}else if(length_3 == 5){
 						%>
@@ -320,10 +319,8 @@ body {
 						<%
 					}
 			  %>
-							
+
 							</button></td>
-              <br><br>
-			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="종료하기" id=scoreBtn style="background-color:red"></button>
             </form>
           </div>
         </div>
@@ -382,6 +379,5 @@ body {
 				}
 			}
 
-    
-    
+
 %>
