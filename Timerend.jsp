@@ -116,13 +116,24 @@ body {
   background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF);
 }
+#scoreBtn2{
+  border: 0;
+  border-radius: 1rem;
+  color: white;
+  background-color: #666660;
+  width: 400px;
+  padding: 5px;
+  font-weight: bold;
+  border-collapse: collapse;
+  display: inline-block;
+}
   
 #scoreBtn{
   border: 0;
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 180px;
+  width: 400px;
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
@@ -186,7 +197,7 @@ body {
 				  <br><br><br><br>
               <hr class="my-4">
             <h5 class="card-title text-center">Timer Ranking</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="200px" >
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="500px" >
               
               <br>
               
@@ -218,7 +229,7 @@ body {
                               <br><br>
              
               <td class='alignRight'>
-                            <button id='scoreBtn'>2등 : <%=username_2%><%
+                            <button id='scoreBtn2'>2등 : <%=username_2%><%
 					int length_2 = time_2.length();
 					if(length_2 == 4) {
 					%>
@@ -242,7 +253,7 @@ body {
 					}
 			  %></button>
                               <td class='alignRight'>
-                            <button id='scoreBtn'>3등 : <%=username_3%><%
+                            <button id='scoreBtn2'>3등 : <%=username_3%><%
 					int length_3 = time_3.length();
 					if(length_3 == 4) {
 					%>
