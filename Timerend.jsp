@@ -112,7 +112,6 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
-
 body {
   background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF);
@@ -129,7 +128,6 @@ body {
   border-collapse: collapse;
   display: inline-block;
 }
-
 .card-signin {
   border: 0;
   border-radius: 1rem;
@@ -137,17 +135,14 @@ body {
   text-align: center;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
-
 .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
 }
-
 .card-signin .card-body {
   padding: 2rem;
 }
-
 .form-signin {
   width: 100%;
 }
@@ -194,7 +189,59 @@ body {
  <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="200px" >
               
               <br>
+              
+                               <td class='alignRight'>
+                            <button id='scoreBtn'>1등 : <%=username_1%><%
+					int length_1 = time_1.length();
+					if(length_1 == 4) {
+					%>
+						<div id='maxtime' name='maxtime'>00 : <%=time_1.substring(0,2)%> : <%=time_1.substring(2,4)%> </div>
+	
+					<%
+					}else if(length_1 == 5){
+						%>
+								<div id='maxtime' name='maxtime'>0<%=time_1.substring(0,1)%> : <%=time_1.substring(1,3)%> : <%=time_1.substring(3,5)%></div>
+
+						<%
+					}
+					else if(length_1 == 6) {
+						%>
+							<div id='maxtime' name='maxtime'><%=time_1.substring(0,2)%> : <%=time_1.substring(2,4)%> : <%=time_1.substring(4,6)%></div>
+						<%
+					}else if(length_1 == 3){
+						%>
+							<div id='maxtime' name='maxtime'>00 : 0<%=time_1.substring(0,1)%> : <%=time_1.substring(1,3)%></div>
+						<%
+					}
+			  %>
+							</button>
+                              <br><br>
+             
               <td class='alignRight'>
+                            <button id='scoreBtn'>2등 : <%=username_2%><%
+					int length_2 = time_2.length();
+					if(length_2 == 4) {
+					%>
+						<div id='maxtime' name='maxtime'>00 : <%=time_2.substring(0,2)%> : <%=time_2.substring(2,4)%> </div>
+	
+					<%
+					}else if(length_2 == 5){
+						%>
+								<div id='maxtime' name='maxtime'>0<%=time_2.substring(0,1)%> : <%=time_2.substring(1,3)%> : <%=time_2.substring(3,5)%></div>
+
+						<%
+					}
+					else if(length_2 == 6) {
+						%>
+							<div id='maxtime' name='maxtime'><%=time_2.substring(0,2)%> : <%=time_2.substring(2,4)%> : <%=time_2.substring(4,6)%></div>
+						<%
+					}else if(length_2 == 3){
+						%>
+							<div id='maxtime' name='maxtime'>00 : 0<%=time_2.substring(0,1)%> : <%=time_2.substring(1,3)%></div>
+						<%
+					}
+			  %></button>
+                              <td class='alignRight'>
                             <button id='scoreBtn'>3등 : <%=username_3%><%
 					int length_3 = time_3.length();
 					if(length_3 == 4) {
@@ -220,55 +267,6 @@ body {
 			  %>
 							
 							</button>
-              <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : <%=username_1%><%
-					int length_1 = time_1.length();
-					if(length_1 == 4) {
-					%>
-						<div id='maxtime' name='maxtime'>00 : <%=time_1.substring(0,2)%> : <%=time_1.substring(2,4)%> </div>
-	
-					<%
-					}else if(length_1 == 5){
-						%>
-								<div id='maxtime' name='maxtime'>0<%=time_1.substring(0,1)%> : <%=time_1.substring(1,3)%> : <%=time_1.substring(3,5)%></div>
-
-						<%
-					}
-					else if(length_1 == 6) {
-						%>
-							<div id='maxtime' name='maxtime'><%=time_1.substring(0,2)%> : <%=time_1.substring(2,4)%> : <%=time_1.substring(4,6)%></div>
-						<%
-					}else if(length_1 == 3){
-						%>
-							<div id='maxtime' name='maxtime'>00 : 0<%=time_1.substring(0,1)%> : <%=time_1.substring(1,3)%></div>
-						<%
-					}
-			  %>
-							</button>
-              <td class='alignRight'>
-                            <button id='scoreBtn'>2등 : <%=username_2%><%
-					int length_2 = time_2.length();
-					if(length_2 == 4) {
-					%>
-						<div id='maxtime' name='maxtime'>00 : <%=time_2.substring(0,2)%> : <%=time_2.substring(2,4)%> </div>
-	
-					<%
-					}else if(length_2 == 5){
-						%>
-								<div id='maxtime' name='maxtime'>0<%=time_2.substring(0,1)%> : <%=time_2.substring(1,3)%> : <%=time_2.substring(3,5)%></div>
-
-						<%
-					}
-					else if(length_2 == 6) {
-						%>
-							<div id='maxtime' name='maxtime'><%=time_2.substring(0,2)%> : <%=time_2.substring(2,4)%> : <%=time_2.substring(4,6)%></div>
-						<%
-					}else if(length_2 == 3){
-						%>
-							<div id='maxtime' name='maxtime'>00 : 0<%=time_2.substring(0,1)%> : <%=time_2.substring(1,3)%></div>
-						<%
-					}
-			  %></button>
               <br><br>
               <td class='alignRight'>
                             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/maingame_timer.jsp'" value="다시하기" id='scoreBtn'></td></td>
