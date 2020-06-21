@@ -121,8 +121,8 @@ body {
   border-radius: 1rem;
   color: white;
   background-color: #666660;
-  width: 400px;
   padding: 5px;
+  font-size:33px;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
@@ -133,8 +133,8 @@ body {
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 400px;
   padding: 5px;
+  font-size:33px;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
@@ -148,7 +148,7 @@ body {
 }
 .card-signin .card-title {
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 300%;
   font-size: 1.5rem;
   font-size:50px;
 }
@@ -198,7 +198,7 @@ body {
 				  <br><br><br><br>
               <hr class="my-4">
             <h5 class="card-title text-center">Timer Ranking</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="500px" >
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="50%" >
               
               <br>
               
