@@ -182,7 +182,7 @@ body {
   color: white;
   font-size:15px;
    background-color: #999999;
-  /*width: 400px;*/
+  width: 40%;
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
@@ -195,7 +195,7 @@ body {
   color: white;
   font-size:15px;
   background-color: #42423E;
-  /*width: 400px;*/
+  width: 40%;
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
