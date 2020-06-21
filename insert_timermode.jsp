@@ -63,8 +63,8 @@
 				
 				%>
 					<script>
-						var time = <%=time%>;
-						window.location.href="http://webdev.iptime.org:8080/kgy/Timerend.jsp?time="+time;
+						var time_r = <%=time%>;
+						window.location.href="http://webdev.iptime.org:8080/kgy/Timerend.jsp?time_r="+time_r;
 					</script>
 				
 				<%
