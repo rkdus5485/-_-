@@ -25,19 +25,22 @@
 			conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 
 			String username = (String)session.getAttribute("username");
+
+			stmt = conn.createStatement();
 			String query = "select point from record_withouttimer where GameUsername = '"+ username + "'";
 			ps = conn.prepareStatement(query);
 			rs=ps.executeQuery();
 
-		if(username == null){
-		
-	%>
 
-	<script>
-	alert('로그인 되지 않았습니다. 로그인 페이지로 이동합니다.');
-	window.location.href="http://webdev.iptime.org:8080/kgy/gamesignin.html";
-	</script>
-	<%
+
+		if(username == null){
+		%>
+				<script>
+				alert('로그인 되지 않았습니다. 로그인 페이지로 이동합니다.');
+				window.location.href="http://webdev.iptime.org:8080/kgy/gamesignin.html";
+				</script>
+				<%
+
 }
 %>
 
@@ -48,44 +51,45 @@
   <title>같은 그림 찾기</title>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <style type="text/css">
-	body{background: #007bff; background: linear-gradient(to right, #0062E6, #33AEFF); text-align: center;}
-        .width500px{width: 450px;  display: inline-block; text-align: center;}
+		body{background: #007bff; background: linear-gradient(to right, #0062E6, #33AEFF); text-align: center;}
+        .width500px{width: 400px;  display: inline-block; text-align: center;}
         .center{text-align: center;}
-        #cardTable{border-collapse: collapse;}
-        #cardTable td{border: 1px solid #42423E; width: 100%; height: 121px; text-align: center; cursor: pointer;}
-        #cardTable td img{max-width: 100%;}
+        #cardTable{border-collapse: collapse; width:100%}
+        #cardTable td{border: 1px solid #42423E; width: 25%; height: 121px; text-align: center; cursor: pointer;}
+        #cardTable td img{width: 100%;}
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
         #countDown{background-color: #42423E; color: white; font-size: 20pt; width: 90%; height: 40px;border-radius: 1rem; float:left;}
 	#exit{background-color:red; color: white; font-size: 20pt; width: 10%; border-radius: 1rem;height: 40px; float:left;}
-	#username{background-color: #42423E; color: white; font-size: 20pt; width: 50%; border-radius: 1rem; float:left;}
+	#username{background-color: #42423E; color: white; font-size: 12pt; width: 33%; border-radius: 1rem; float:left;}
         #info{width: 100%; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
-	#maxscore{background-color: #42423E; color: white; font-size: 20pt; width: 50%; border-radius: 1rem; float:left}
-        
+	#maxscore{background-color: #42423E; color: white; font-size: 12pt; width: 33%; border-radius: 1rem; float:left}
+
+
+
+
 #startBtn{
   border: 0;
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 200;
-  font-size: 20pt;
-  padding: 5px;
-  font-weight: bold;
+  width: 33%;
+  font-size: 12pt;
   cursor: pointer;
   border-collapse: collapse;
   display: inline-block;
 }
 
 #scoreBtn{
+font-size: 20pt;
   border: 0;
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 200;
+  width: 100%;
   padding: 5px;
-  font-size: 20pt;
-  font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
+
 }
 
 .card-signin {
@@ -100,25 +104,26 @@
 }
         </style>
 
+
   <script>
 	// 게임 상태
             var gameState = '';
- 
+
             // 열린 카드 src
             var openCardId = '';
             var openCardId2 = '';
- 
+
             // 난수 생성 함수
             function generateRandom (min, max) {
                 var ranNum = Math.floor(Math.random()*(max-min+1)) + min;
                     return ranNum;
             }
- 
-            
+
+
             var cards; // 카드 목록
             var score = 0; // 점수
             var openedCtn = 0; // 맞춘 카드 갯수
-            
+
             // 카드 배치
             function setTable(){
                 cards = [
@@ -134,39 +139,39 @@
                 'https://image.flaticon.com/icons/svg/2548/2548560.svg','https://image.flaticon.com/icons/svg/2548/2548560.svg', // 메론
                 'https://image.flaticon.com/icons/svg/590/590775.svg','https://image.flaticon.com/icons/svg/590/590775.svg' // 복숭아
                 ];
-                var cardTableCode = '<tr>';                
+                var cardTableCode = '<tr>';
                 for(var i=0;i<20;i++) {
                     if(i>0 && i%4 == 0){
                         cardTableCode += '</tr><tr>';
                     }
                     var idx = generateRandom(0,19-i);
                     var img = cards.splice(idx,1);
- 
+
                     cardTableCode += '<td id="card'+i+'"><img src="'+img+'"><span>?</span></td>';
                 }
                 cardTableCode += '</tr>';
                 $('#cardTable').html(cardTableCode);
             }
- 
+
             // 카드 전체 가리기
             function hiddenCards(){
                 $('#cardTable td img').hide();
                 $('#cardTable td span').show();
             }
- 
+
             // 게임 시작
             function startGame() {
                 var sec =6;
-                
+
                 $('#info').hide(); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
                 setTable(); // 카드 배치
-                
+
                 //준비 카운트 다운
                 function setText(){
                     $('#countDown').text(--sec);
                 }
- 
+
                 //시작 카운트 다운
                 var intervalID = setInterval(setText, 1000);
                 setTimeout(function(){
@@ -176,38 +181,39 @@
                     gameState = 'ingame';
                 }, 6000);
             }
- 
- 
+
+
             // 카드 선택 시
             $(document).on('click', '#cardTable td', function(){
                 if(gameState != 'ingame') return; // 게임 카운트 다운중일 때 누른 경우 return
                 if(openCardId2 != '') return; // 2개 열려있는데 또 누른 경우 return
-                if($(this).hasClass('opened')) return; // 열려있는 카드를 또 누른 경우                
+                if($(this).hasClass('opened')) return; // 열려있는 카드를 또 누른 경우
                 $(this).addClass('opened'); // 열여있다는 것을 구분하기 위한 class 추가
- 
+
                 if(openCardId == '') {
                     $(this).find('img').show();
                     $(this).find('span').hide();
                     openCardId = this.id;
                 }else {
                     if(openCardId == openCardId2) return; //같은 카드 누른 경우 return
- 
+
                     $(this).find('img').show();
                     $(this).find('span').hide();
-                    
+
                     var openCardSrc = $('#'+openCardId).find('img').attr('src');
                     var openCardSrc2 = $(this).find('img').attr('src');
                     openCardId2 = this.id;
-                    
+
                     if(openCardSrc == openCardSrc2) { // 일치
                         openCardId = '';
                         openCardId2 = '';
                         scorePlus();
                         if(++openedCtn == 10){
-				gameState='';
-                            window.location.href="http://webdev.iptime.org:8080/kgy/insert_scoremode.jsp?score="+score;
-							
-							
+							gameState=''; //gameState 초기화
+                            //alert('성공!!\n'+score+'점 입니다!');
+							window.location.href="http://webdev.iptime.org:8080/kgy/insert_scoremode.jsp?score="+score;
+
+
                         }
                     }else { // 불일치
                         setTimeout(back, 1000);
@@ -215,7 +221,7 @@
                     }
                 }
             });
- 
+
             // 두개의 카드 다시 뒤집기
             function back() {
                 $('#'+openCardId).find('img').hide();
@@ -227,7 +233,7 @@
                 openCardId = '';
                 openCardId2 = '';
             }
- 
+
             // 점수 초기화
             function scoreInit(){
                 score = 0;
@@ -244,59 +250,53 @@
                 score -= 5;
                 $('#score').text(score);
             }
- 
+
             $(document).on('click', '#startBtn', function(){
                 if(gameState == '') {
                     startGame();
                     gameState = 'alreadyStart'
                 }
-		    if(gameState != 'ingame'){
+				if(gameState != 'ingame'){
                   document.getElementById("startBtn").disabled = true;}
             });
-            
+
 
   </script>
-  </head> 
+ </head>
  <body>
   <div class="container">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <div>
-                <h2>같은 그림 찾기 게임</h2>
 
-            </div>
             <div>
+			<button id='scoreBtn'><span>score : <span id='score' name='score'>0
+
+							</span></span></button><br><br>
+
                 <div id='countDown'>준비
                 </div>
-		<div id='exit' onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'">X</div><br><br>
+				<div id='exit' onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'">X</div><br><br>
                 <table id='cardTable'>
                 </table>
                 <div id='info'>
                     start 버튼을 눌러주세요<br>
                 </div>
-		    <div id='username' name='username' ><%=username%>
-					
-                </div><%
-			if(rs.next()){
-				String point=rs.getString("point");
+		    <div>
 
-			%>	
-		<div id='maxscore' name='maxscore'><%=point%>
-		<%}
-		%></div><br><br>
-				
-                  <table id="menuTable">
-                    <tr>
-                        <td class='alignLeft'>
-                            <button id='startBtn'>start</button>
-                        </td>
-                        <td class='alignRight'>
-                            <button id='scoreBtn'><span>score : <span id='score' name='score'>0</span></span></button>
-                        </td>
-                    </tr>
-                </table>
+                <div id='username' name='username' ><%=username%>
+
+                </div><%
+								if(rs.next()){
+									String point=rs.getString("point");
+
+							%>
+				<div id='maxscore' name='maxscore'><%=point%>
+				<%}
+							%></div>
+							<div><button id='startBtn'>start</button></div>
+
             </div>
         </div>
         </div>
