@@ -62,8 +62,8 @@
 				%>
 						
 					<script>
-						var point = <%=point%>;
-						window.location.href="http://webdev.iptime.org:8080/kgy/Scoreend.jsp?point="+point;
+						var point_r = <%=point%>;
+						window.location.href="http://webdev.iptime.org:8080/kgy/Scoreend.jsp?point_r="+point_r;
 					</script>
 					
 					
