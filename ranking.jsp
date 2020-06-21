@@ -182,7 +182,6 @@ body {
   color: white;
   font-size:33px;
   background-color: #666660;
-  width: 400px;
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
@@ -195,7 +194,6 @@ body {
   color: white;
   font-size:33px;
   background-color: #42423E;
-  width: 400px;
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
@@ -210,7 +208,7 @@ body {
 }
 .card-signin .card-title {
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 300%;
   font-size: 1.5rem;
   font-size:50px;
 }
@@ -230,20 +228,20 @@ body {
             <form class="form-signin">
 
               <h5 class="card-title text-center">Score Mode</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="500px" >
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="50%" >
               
               <br>
               <td class='alignRight'>
-                            <button id='scoreBtn'>1등 : <%=p_username_1%> <%=points_1%>점 </button><br><br>
+                            <button id='scoreBtn'>1등 : <%=p_username_1%> <br><%=points_1%>점 </button><br><br>
               <td class='alignRight'>
-                            <button id='scoreBtn2'>2등 : <%=p_username_2%> <%=points_2%>점 </button>
+                            <button id='scoreBtn2'>2등 : <%=p_username_2%><br> <%=points_2%>점 </button>
               <td class='alignRight'>
-                            <button id='scoreBtn2'>3등 : <%=p_username_3%> <%=points_3%>점 </button>
+                            <button id='scoreBtn2'>3등 : <%=p_username_3%> <br><%=points_3%>점 </button>
               <br><br>
               <br><br>
           <hr class="my-4">
               <h5 class="card-title text-center">Timer Ranking</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="500px" >
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="50%" >
               
               <br>
               
