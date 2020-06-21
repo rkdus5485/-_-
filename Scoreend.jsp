@@ -16,24 +16,20 @@
     Statement stmt = null;
     ResultSet rs = null;
     ResultSet r = null;
-
 		ArrayList<String> Usernameforpoint = new ArrayList();
 		ArrayList<String> pointer = new ArrayList();
 		
 		String username = (String)session.getAttribute("username");
 		String point_r = request.getParameter("point_r");
-
 		
 	    String SQL_point = "SELECT * FROM record_withouttimer";
 	    
-
 		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
 		String dbUser = "kgy";
 		String dbPass = "kgy1234";
 		
 		String driver = "com.mysql.jdbc.Driver";
 		Class.forName("com.mysql.jdbc.Driver");
-
 		try{
 			conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 			pstmt =  conn.createStatement();
@@ -52,7 +48,6 @@
 			String point1;
 			point1 = "0";
 			int i;
-
 			//find 1st
 			for(i = 0; i <pointer.size(); i++) {
 				if(Integer.parseInt(point1) < Integer.parseInt(pointer.get(i))) {
@@ -91,15 +86,12 @@
 			Usernameforpoint.remove(count_p[2]);
 			pointer.remove(count_p[2]);
 			
-
-
 			String p_username_1 = puname[0];
 			String points_1 = p_loc[0];
 			String p_username_2 = puname[1];
 			String points_2 = p_loc[1];
 			String p_username_3 = puname[2];
 			String points_3 = p_loc[2];
-
 		
 			
 		
@@ -125,7 +117,7 @@ body {
   border: 0;
   border-radius: 1rem;
   color: white;
-  font-size:33px;
+  font-size:20px;
   background-color: #666660;
   padding: 5px;
   font-weight: bold;
@@ -137,7 +129,7 @@ body {
   border: 0;
   border-radius: 1rem;
   color: white;
-  font-size:33px;
+  font-size:20px;
   background-color: #42423E;
   padding: 5px;
   font-weight: bold;
@@ -152,13 +144,13 @@ body {
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 .card-signin .card-title {
-  margin-bottom: 2rem;
-  font-weight: 300%;
+  margin-bottom: 1rem;
+  font-weight: 100%;
   font-size: 1.5rem;
-  font-size:50px;
+  font-size:28px;
 }
 .card-signin .card-body {
-  padding: 2rem;
+  padding: 1rem;
 }
 .form-signin {
   width: 100%;
@@ -171,15 +163,13 @@ body {
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center"></h5>
             <form class="form-signin">
-              <h5 class="card-title text-center">Your Score</h5>
-              <br>
-			<input type="text" style ="border: none; background: transparent; font-size:50pt;font-weight:bold;color:#0054FF;" value="	<%=point_r%>점">	
-				  <br><br><br><br>
+              <div class="card-title text-center" style ="border: none; background: transparent; font-size:25px;font-weight:bold;">Your Score</div>
+			<div class="card-title text-center" style ="border: none; background: transparent; font-size:25px;font-weight:bold;color:#0054FF;"><%=point_r%>점</div>	
+				  
               <hr class="my-4">
             <h5 class="card-title text-center">Score Ranking</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="50%">
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="80%">
               
               <br>
               <td class='alignRight'>
