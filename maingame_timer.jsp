@@ -52,42 +52,50 @@
   <title>같은 그림 찾기</title>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <style type="text/css">
-		body{background: #007bff; background: linear-gradient(to right, #0062E6, #33AEFF); text-align: center;}
+	body{background: #007bff; background: linear-gradient(to right, #0062E6, #33AEFF); text-align: center;}
         .width500px{width: 450px;  display: inline-block; text-align: center;}
         .center{text-align: center;}
         #cardTable{border-collapse: collapse;}
-        #cardTable td{border: 1px solid #42423E; width: 110px; height: 121px; text-align: center; cursor: pointer;}
-        #cardTable td img{max-width: 110px;}
+        #cardTable td{border: 1px solid #42423E; width: 100%; height: 121px; text-align: center; cursor: pointer;}
+        #cardTable td img{max-width: 100%;}
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
-	#username{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
-	#maxtime{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
-  	#countDown{background-color: #42423E; color: white; font-size: 20pt; width: 320px; border-radius: 1rem; float:left;}
-    	#exit{background-color:red; color: white; font-size: 20pt; width: 50px; border-radius: 1rem; float:left;}
-	#countupbar{background-color: #42423E; color: white; font-size: 20pt; max-width: 469px; border-radius: 1rem; text-align: center;}
-        #info{width: 469px; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
-
+        #countDown{background-color: #42423E; color: white; font-size: 20pt; width: 90%; height: 40px;border-radius: 1rem; float:left;}
+	#exit{background-color:red; color: white; font-size: 20pt; width: 10%; border-radius: 1rem;height: 40px; float:left;}
+	#username{background-color: #42423E; color: white; font-size: 20pt; width: 50%; border-radius: 1rem; float:left;}
+        #info{width: 100%; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
+	#maxscore{background-color: #42423E; color: white; font-size: 20pt; width: 50%; border-radius: 1rem; float:left}
+        
 #startBtn{
   border: 0;
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 360px;
+  width: 200;
+  font-size: 20pt;
   padding: 5px;
   font-weight: bold;
   cursor: pointer;
   border-collapse: collapse;
   display: inline-block;
 }
-
-
-
+#scoreBtn{
+  border: 0;
+  border-radius: 1rem;
+  color: white;
+  background-color: #42423E;
+  width: 200;
+  padding: 5px;
+  font-size: 20pt;
+  font-weight: bold;
+  border-collapse: collapse;
+  display: inline-block;
+}
 .card-signin {
   background: #FFFFFF;
   border: 0;
   border-radius: 1.5rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
-
 .card-signin .card-body {
   padding: 2rem;
 }
