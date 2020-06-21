@@ -120,9 +120,10 @@ body {
   border: 0;
   border-radius: 1rem;
   color: white;
+  font-size:20px;
   background-color: #666660;
+  
   padding: 5px;
-  font-size:33px;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
@@ -132,9 +133,10 @@ body {
   border: 0;
   border-radius: 1rem;
   color: white;
+  font-size:20px;
   background-color: #42423E;
+  
   padding: 5px;
-  font-size:33px;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
@@ -147,13 +149,13 @@ body {
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 .card-signin .card-title {
-  margin-bottom: 2rem;
-  font-weight: 300%;
+  margin-bottom: 1rem;
+  font-weight: 100%;
   font-size: 1.5rem;
-  font-size:50px;
+  font-size: 28px;
 }
 .card-signin .card-body {
-  padding: 2rem;
+  padding: 1rem;
 }
 .form-signin {
   width: 100%;
@@ -166,39 +168,38 @@ body {
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center"></h5>
             <form class="form-signin">
-              <h5 class="card-title text-center">Your Time</h5>
-              <br>
+              <div class="card-title text-center" style ="border: none; background: transparent; font-size:25px;font-weight:bold;">Your Time</div>
+              
 			  <%
 					int length = time_r.length();
 					if(length == 4){
 					%>
-						<div id='maxtime' name='maxtime'><input type="text" style ="border: none; background: transparent; font-size:50pt;font-weight:bold;color:#0054FF;" value="  00 : <%=time_r.substring(0,2)%> : <%=time_r.substring(2,4)%> "></div><br><br>
+						<div class="card-title text-center" style ="font-size:25px;font-weight:bold;color:#0054FF;">00 : <%=time_r.substring(0,2)%> : <%=time_r.substring(2,4)%></div>
 	
 					<%
 					}else if(length == 5){
 					%>
-						<div id='maxtime' name='maxtime'><input type="text" style ="border: none; background: transparent; font-size:50pt;font-weight:bold;color:#0054FF;" value="  0<%=time_r.substring(0,1)%> : <%=time_r.substring(1,3)%> : <%=time_r.substring(3,5)%>"></div><br><br>
+						<div class="card-title text-center" style ="font-size:25px;font-weight:bold;color:#0054FF;">0<%=time_r.substring(0,1)%> : <%=time_r.substring(1,3)%> : <%=time_r.substring(3,5)%></div>
 	
 					<%
 					}else if(length == 6) {
 						%>
-								<div id='maxtime' name='maxtime'><input type="text" style ="border: none; background: transparent; font-size:50pt;font-weight:bold;color:#0054FF;" value="  <%=time_r.substring(0,2)%> : <%=time_r.substring(2,4)%> : <%=time_r.substring(4,6)%>"></div><br><br>
+						<div class="card-title text-center" style ="font-size:25px;font-weight:bold;color:#0054FF;"><%=time_r.substring(0,2)%> : <%=time_r.substring(2,4)%> : <%=time_r.substring(4,6)%></div>
 						
 						<%
 					}else if(length == 3) {
 						%>
-								<div id='maxtime' name='maxtime'><input type="text" style ="border: none; background: transparent; font-size:50pt;font-weight:bold;color:#0054FF;" value="  00 : 0<%=time_r.substring(0,1)%> : <%=time_r.substring(1,3)%>"></div><br><br>
+						<div class="card-title text-center" style ="font-size:25px;font-weight:bold;color:#0054FF;">00 : 0<%=time_r.substring(0,1)%> : <%=time_r.substring(1,3)%></div>
 
 								
 						<%
 						}
 				%>	
-				  <br><br><br><br>
+				  
               <hr class="my-4">
             <h5 class="card-title text-center">Timer Ranking</h5>
- <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="50%" >
+ <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg width="80%" >
               
               <br>
               
