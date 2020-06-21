@@ -52,21 +52,22 @@
         .width500px{width: 450px;  display: inline-block; text-align: center;}
         .center{text-align: center;}
         #cardTable{border-collapse: collapse;}
-        #cardTable td{border: 1px solid #42423E; width: 110px; height: 121px; text-align: center; cursor: pointer;}
-        #cardTable td img{max-width: 110px;}
+        #cardTable td{border: 1px solid #42423E; width: 100%; height: 121px; text-align: center; cursor: pointer;}
+        #cardTable td img{max-width: 100%;}
         #cardTable td span{font-size: 25pt; font-weight: bold; color: #42423E; display: none;}
-        #countDown{background-color: #42423E; color: white; font-size: 20pt; width: 320px; border-radius: 1rem; float:left;}
-	#exit{background-color:red; color: white; font-size: 20pt; width: 50px; border-radius: 1rem; float:left;}
-	#username{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left;}
-        #info{width: 469px; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
-	#maxscore{background-color: #42423E; color: white; font-size: 20pt; width: 180px; border-radius: 1rem; float:left}
+        #countDown{background-color: #42423E; color: white; font-size: 20pt; width: 90%; height: 40px;border-radius: 1rem; float:left;}
+	#exit{background-color:red; color: white; font-size: 20pt; width: 10%; border-radius: 1rem;height: 40px; float:left;}
+	#username{background-color: #42423E; color: white; font-size: 20pt; width: 50%; border-radius: 1rem; float:left;}
+        #info{width: 100%; height: 300px; border-radius: 1rem; background-color: #DDDDDD; color: black; padding-top: 250px;}
+	#maxscore{background-color: #42423E; color: white; font-size: 20pt; width: 50%; border-radius: 1rem; float:left}
         
 #startBtn{
   border: 0;
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 180px;
+  width: 200;
+  font-size: 20pt;
   padding: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -79,8 +80,9 @@
   border-radius: 1rem;
   color: white;
   background-color: #42423E;
-  width: 180px;
+  width: 200;
   padding: 5px;
+  font-size: 20pt;
   font-weight: bold;
   border-collapse: collapse;
   display: inline-block;
@@ -97,7 +99,6 @@
   padding: 2rem;
 }
         </style>
-
 
   <script>
 	// 게임 상태
@@ -255,7 +256,7 @@
             
 
   </script>
- </head> 
+  </head> 
  <body>
   <div class="container">
     <div class="row">
