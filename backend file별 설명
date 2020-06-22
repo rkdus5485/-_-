@@ -1,0 +1,80 @@
+maingame_score.jsp, maingame_timer.jsp
+https://dororongju.tistory.com/103 여기에 있는 오픈 소스를 사용했고, 
+src="https://user-images.githubusercontent.com/45381907/85260211-4779f580-b4a5-11ea-8277-59ad18fd6531.png"
+
+
+
+게임 진행 중에 타이머가 실행되는 부분은 
+http://happycgi.com/7708 여기에 있는 코드를 사용했습니다.
+timer이미지
+src="https://user-images.githubusercontent.com/45381907/85260244-506ac700-b4a5-11ea-9f92-80ce37fed13b.PNG"
+
+
+
+그리고 다른 코드들은 w3school에 있는 코드를 참고하여 만들었습니다. 
+
+
+
+checkUsername.jsp
+회원 가입 시 입력한 username과 이미 회원가입을 해서 데이터 베이스에 저장된 username과 비교를 하여, 중복된 username 있으면 회원가입을 하지 못하도록 해주는 jsp파일입니다.
+
+
+
+loginaction.jsp
+회원가입 시 입력했던 username과 비밀번호를 데이터베이스에 있던 값들과 비교하여 회원가입 목록에 있는 username과 비밀번호가 일치하면 로그인을 할 수 있게 해줍니다.
+일치하지 않으면 username과 비밀번호를 비교하라는 알림메세지가 나오도록 되어있습니다. 
+이 파일에서는 입력된 username 값은 session에 저장됩니다.
+
+
+
+gamesignup.jsp 
+처음 회원가입을 할 때 입력한 username을 checkUsername.jsp 파일을 이용해서 중복확인을 하도록 합니다.
+그리고 중복확인을 완료하면 gamesignup_1.jsp 파일로 중복확인 한 username은 옮겨지게 됩니다.
+gamesignup_1.jsp파일에 넘겨진 아이디 값은 다시 수정할 수 없도록 설정되어있습니다. 
+
+
+
+maingame_score.jsp
+로그인 하지 않으면 username이 session에 저장되지 않아 로그인 페이지로 이동합니다.
+로그인 후 게임을 실행하고 그림 10 쌍을 맞추면 insert_scoremode.jsp로 이동합니다. 그림을 맞추면 +10점, 틀리면 -5점을 받습니다.
+아래쪽에 session에 저장된 username과 자신의 최고점수를 보여줍니다.
+최고기록 코드
+src="https://user-images.githubusercontent.com/45381907/85221260-5ef5a780-b3ed-11ea-8fce-7b8f725cd866.PNG"
+점수 +- 되는 코드
+src="https://user-images.githubusercontent.com/45381907/85221248-408fac00-b3ed-11ea-9a76-9dbe22c9e3a4.PNG"
+
+
+
+
+insert_scoremode.jsp
+maingame_score.jsp에서 현재점수 'score'을 'point'라는 변수로 받아 옵니다.
+DB에 저장된 자신의 최고 점수와 현재 점수 'point'를 비교하여 point가 더 높으면 DB에 update합니다. 그 후 Scoreend.jsp로 'point'를 'point_r'이라는 이름과 값과 함께 이동합니다.
+
+
+
+Scoreend.jsp
+화면 위쪽에 이번 게임에서 받은 점수인 'point_r'을 보여주고
+화면 아래쪽에 score mode의 1,2,3등의 기록을 보여줍니다.
+
+
+
+maingame_timer.jsp
+로그인 하지 않으면 username이 session에 저장되지 않아 로그인 페이지로 이동합니다.
+로그인 후 게임을 실행하고 그림 10쌍을 맞추면 insert_timermode.jsp로 이동합니다.
+아래쪽에 session에 저장된 username과 자신의 최고 기록을 보여줍니다.
+최고기록 코드
+src="https://user-images.githubusercontent.com/45381907/85221256-58673000-b3ed-11ea-9f7e-cdf4eee2eab6.PNG"
+바꾼 timer code
+src="https://user-images.githubusercontent.com/45381907/85221253-4eddc800-b3ed-11ea-819d-b3aa3251c718.PNG"
+
+
+
+insert_timermode.jsp
+maingame_timer.jsp에서 현재 기록 'time'을 'time'이라는 변수로 받아 옵니다.
+DB에 저장된 자신의 최고 기록과 현재 기록 'time'을 비교하여 time이 더 높으면 DB에 update 합니다. 그 후 Timerend.jsp로 'time'을 'time_r'이라는 이름과 값과 함께 이동합니다.
+
+
+
+Timerend.jsp
+화면 위쪽에 이번 게임에서 받은 점수인 'time_r'을 보여주고
+화면 아래쪽에 timer mode의 1,2,3등의 기록을 보여줍니다.
