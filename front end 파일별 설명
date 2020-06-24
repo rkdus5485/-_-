@@ -12,10 +12,11 @@
 1) initialpage.html
 - input type="button"을 사용하여 로그인과 회원가입 버튼을 만들고
  onclick="location.href='페이지 주소'"를 통하여 각각 로그인 페이지와 회원가입 페이지로 연결될 수 있게 했습니다
+ background-image style코드를 사용하여 배경화면에 여러가지 과일 이미지를 삽입하였습니다.
 
 2) gamesignup.html
 - input type="text", input type="password"를 사용하여 닉네임과 비밀번호를 입력하는 란을 만들었습니다.
- input type="submit"을 통해 가입하기 란을, input type="reset"을 통해 다시쓰기 란을 만들었습니다.
+ input type="submit"을 통해 가입하기 버튼을, input type="reset"을 통해 다시쓰기 버튼을 만들었습니다.
  input type="button"으로 중복확인 버튼과 class="btn btn-lg btn-primary btn-block text-uppercase"을 사용하여 클릭 시 종료할 수 있도록 페이지 마다 종료하기 버튼을 만들었습니다.
 
 3) gamesignin.html
@@ -25,12 +26,14 @@
 4) modeselect.html
 - input type="button"과 onclick="location.href='페이지 주소'"를 통하여 게임 설명, 점수 모드, 타이머 모드, 랭킹 확인 버튼을 만들고 종료하기 버튼을 만들었습니다.
 
-5) maingame.html, maingame_timer.html
-- #클래스 이름{속성 나열}과 div를 통해 스타일 속성을 일괄적으로 적용하기 위한 타이머, 게임, 점수, 종료, 닉네임, 최고기록, 시작, 시작 안내판을 만들었습니다.
+5) maingame_score.html, maingame_timer.html
+- #클래스 이름{속성 나열}과 div를 통해 스타일 속성을 일괄적으로 적용하기 위한 타이머, 게임, 점수, 게임종료, 유저네임, 최고기록, 시작, 시작 안내판을 만들었습니다.
 
 6) ranking.html
 - #클래스 이름{속성 나열}로 기록판을 만들어 랭킹을 표시할 수 있게 했습니다.
+img src = 페이지주소 를 사용하여 등수가 나오는 이미지를 삽입하였습니다.
 
-7) score.html
+7) score_end.html, timer_end.html
 - input type="button"과 onclick="location.href='페이지 주소'"를 통해 해당 게임 모드 페이지와 연결해주는 다시하기 버튼과 모드 선택 페이지로 돌아가는 모드선택 버튼을 만들었습니다.
  #클래스 이름{속성 나열}로 1위, 2위, 3위를 표시하는 점수판을 만들었습니다.
+ img src = 페이지주소 를 사용하여 등수가 나오는 이미지를 삽입하였습니다.
