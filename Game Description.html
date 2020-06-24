@@ -1,1 +1,257 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+       <style type="text/css">
+       :root {
+ --input-padding-x: 1.5rem;
+ --input-padding-y: .75rem;
+}
 
+body {
+ background: #007bff;
+ background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.card-signin {
+ border: 0;
+ border-radius: 1rem;
+ background: #fff;
+ text-align : center;
+ box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+ margin-bottom: 2rem;
+ font-weight: 300;
+ text-align: center;      
+ font-size: 1.5rem;
+
+}
+
+.card-signin .card-body {
+ padding: 2rem;
+ 
+}
+
+
+        </style>
+<body>
+ <div class="container">
+   <div class="row">
+     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+       <div class="card card-signin my-5">
+         <div class="card-body">
+           <h5 class="card-title text-center">[같은그림찾기]</h5>
+           <form class="form-signin" action="#">
+
+            1. 회원이 아니시라면 먼저 회원가입을 하셔야합니다.<br>
+          <br>
+            2. 회원이시라면, 로그인을 하셔야 게임을 즐기실 수 있습니다.<br>
+            <br>
+            3. 총 20개의 카드로 10개 종류의 그림이 있습니다.
+                <br>
+                그림 짝을 모두 맞추면 끝나는 단순한 게임입니다.
+            <br>
+            <br>
+            4.게임 모드는 Score mode와 Timer mode 2가지로 나뉩니다.
+                <br>
+                하단에는 회원님의 아이디, 점수(Score mode의 경우) 또는 시간(Timer mode의 경우), start버튼이 있습니다. 
+                <br>
+                하단의 start 버튼을 누르면 게임이 시작됩니다.
+                <br>
+                상단 우측의 빨간색 X 버튼을 누르면 게임 도중에 끝낼 수 있습니다.
+                <br>
+                <img src="Score.jpg" width="300" height="200" alt="score mode">
+                <img src="Timer.jpg" width="300" height="200" alt="timer mode">
+            <br>
+            <br>
+
+            5. Score mode : 시간에 제한은 없습니다. 하지만 짝을 잘못 맞췄을 시에는 감점이 있습니다.<br>
+                 맞췄을 시 : +10 / 틀렸을 시 : -5
+                 <br>
+                <img src="AfterScore.jpg" width="300" height="200" alt="finish">
+            <br>
+            <br>
+            6. Timer mode : 누가 더 빨리 게임을 끝내는지 겨루는 방식입니다.<br>
+                 타이머가 존재합니다. 하지만 카드 짝을 잘못 맞췄을 경우에 감점은 없습니다.
+                <br>
+                <img src="AfterTimer.jpg" width="300" height="200" alt="finish"><br>
+            7. Rank : Timer mode와 Score mode의 rank를 확인할 수 있습니다. 각 모드별로 1위부터 3위까지 보여줍니다. <br>
+            <img src="Rank.jpg" width="300" height="200" alt=""><br>
+            
+  <br>
+      <h2>Front_End part</h2>
+    <h3>2016008104 김정인<br> 2017012342 이승빈<br><a href="https://github.com/rkdus5485/project/tree/front_end">Front_End branch</a></h3>
+
+  [참고 사이트]<br>
+1. https://jsfiddle.net/StartBootstrap/amxr8n19/<br>
+- CSS 참고 홈페이지<br><br>
+
+2. http://editor.livegap.com/index.php?lan=ko#fid=v82ep9mp03279&pid=8076fi4noz279<br>
+- HTML 작성 미리보기 홈페이지<br><br>
+
+3. https://sketch2code.azurewebsites.net/<br>
+- 수기로 작성한 이미지를 html 코드로 변환하는 홈페이지<br>
+    <br><br>
+
+  [프론트 페이지 구성]
+1. initialpage.html<br>
+- input type="button"을 사용하여 로그인과 회원가입 버튼을 만들고<br>
+ onclick="location.href='페이지 주소'"를 통하여 각각 로그인 페이지와 회원가입 페이지로 연결될 수 있게 했습니다<br>
+ background-image style코드를 사용하여 배경화면에 여러가지 과일 이미지를 삽입하였습니다.
+<br><br>
+
+2. gamesignup.html<br>
+- input type="text", input type="password"를 사용하여 닉네임과 비밀번호를 입력하는 란을 만들었습니다.<br>
+ input type="submit"을 통해 가입하기 버튼을, input type="reset"을 통해 다시쓰기 버튼을 만들었습니다.<br>
+ input type="button"으로 중복확인 버튼과 class="btn btn-lg btn-primary btn-block text-uppercase"을 사용하여 클릭 시 종료할 수 있도록 페이지 마다 종료하기 버튼을 만들었습니다.<br>
+<br><br>
+  
+ 3. gamesignin.html<br>
+- input type="text", input type="password"를 통하여 닉네임과 비밀번호를 입력하는 란을 만들었습니다.<br>
+ input type="button"과 onclick="location.href='페이지 주소'"를 통하여 로그인 버튼 클릭 시 게임 모드 선택 화면으로 이동하도록 만들고 종료하기 버튼을 만들었습니다.<br>
+<br><br>
+  
+4. modeselect.html<br>
+- input type="button"과 onclick="location.href='페이지 주소'"를 통하여 게임 설명, 점수 모드, 타이머 모드, 랭킹 확인 버튼을 만들고 종료하기 버튼을 만들었습니다.<br>
+<br><br>
+  
+5. maingame_score.html, maingame_timer.html<br>
+- #클래스 이름{속성 나열}과 div를 통해 스타일 속성을 일괄적으로 적용하기 위한 타이머, 게임, 점수, 게임종료, 유저네임, 최고기록, 시작, 시작 안내판을 만들었습니다.<br>
+ <br><br>
+
+6. ranking.html<br>
+- #클래스 이름{속성 나열}로 기록판을 만들어 랭킹을 표시할 수 있게 했습니다.<br>
+img src = 페이지주소 를 사용하여 등수가 나오는 이미지를 삽입하였습니다.<br>
+<br><br>
+  
+7. score_end.html, timer_end.html<br>
+- input type="button"과 onclick="location.href='페이지 주소'"를 통해 해당 게임 모드 페이지와 연결해주는 다시하기 버튼과 모드 선택 페이지로 돌아가는 모드선택 버튼을 만들었습니다.<br>
+ #클래스 이름{속성 나열}로 1위, 2위, 3위를 표시하는 점수판을 만들었습니다.<br>
+ img src = 페이지주소 를 사용하여 등수가 나오는 이미지를 삽입하였습니다.<br>
+<br><br>  
+  
+        <h2>Back_End part</h2>
+    <h3>김가연<br>심유라<br><a href="https://github.com/rkdus5485/project/tree/back_end">Back_End branch</a></h3>
+ 
+1. maingame_score.jsp, maingame_timer.jsp<br>
+https://dororongju.tistory.com/103 여기에 있는 오픈 소스를 사용했고, <br>
+<img src="https://user-images.githubusercontent.com/45381907/85260211-4779f580-b4a5-11ea-8277-59ad18fd6531.png"><br><br>
+
+게임 진행 중에 타이머가 실행되는 부분은 
+http://happycgi.com/7708 여기에 있는 코드를 사용했습니다.<br>
+      타이머 사진<br>
+<img src="https://user-images.githubusercontent.com/45381907/85260244-506ac700-b4a5-11ea-9f92-80ce37fed13b.PNG"><br><br>
+그리고 다른 코드들은 w3school에 있는 코드를 참고하여 만들었습니다.<br><br>
+
+2. checkUsername.jsp<br>
+회원 가입 시 입력한 username과 이미 회원가입을 해서 데이터 베이스에 저장된 username과 비교를 하여, 중복된 username 있으면 회원가입을 하지 못하도록 해주는 jsp파일입니다.<br><br>
+
+
+
+3. loginaction.jsp<br>
+회원가입 시 입력했던 username과 비밀번호를 데이터베이스에 있던 값들과 비교하여 회원가입 목록에 있는 username과 비밀번호가 일치하면 로그인을 할 수 있게 해줍니다.<br>
+일치하지 않으면 username과 비밀번호를 비교하라는 알림메세지가 나오도록 되어있습니다. <br>
+이 파일에서는 입력된 username 값은 session에 저장됩니다.<br><br>
+
+
+
+4. gamesignup.jsp <br>
+처음 회원가입을 할 때 입력한 username을 checkUsername.jsp 파일을 이용해서 중복확인을 하도록 합니다.<br>
+그리고 중복확인을 완료하면 gamesignup_1.jsp 파일로 중복확인 한 username은 옮겨지게 됩니다.<br>
+gamesignup_1.jsp파일에 넘겨진 아이디 값은 다시 수정할 수 없도록 설정되어있습니다. <br><br>
+
+
+
+5. maingame_score.jsp<br>
+로그인 하지 않으면 username이 session에 저장되지 않아 로그인 페이지로 이동합니다.<br>
+로그인 후 게임을 실행하고 그림 10 쌍을 맞추면 insert_scoremode.jsp로 이동합니다. 그림을 맞추면 +10점, 틀리면 -5점을 받습니다.<br>
+아래쪽에 session에 저장된 username과 자신의 최고점수를 보여줍니다.<br>
+최고기록 코드<br>
+<img src="https://user-images.githubusercontent.com/45381907/85221260-5ef5a780-b3ed-11ea-8fce-7b8f725cd866.PNG"><br><br>
+점수 +- 되는 코드<br>
+<img src="https://user-images.githubusercontent.com/45381907/85221248-408fac00-b3ed-11ea-9a76-9dbe22c9e3a4.PNG"><br><br>
+
+
+
+
+6. insert_scoremode.jsp<br>
+maingame_score.jsp에서 현재점수 'score'을 'point'라는 변수로 받아 옵니다.<br>
+DB에 저장된 자신의 최고 점수와 현재 점수 'point'를 비교하여 point가 더 높으면 DB에 update합니다. 그 후 Scoreend.jsp로 'point'를 'point_r'이라는 이름과 값과 함께 이동합니다.<br><br>
+
+
+
+7. Scoreend.jsp<br>
+화면 위쪽에 이번 게임에서 받은 점수인 'point_r'을 보여주고<br>
+화면 아래쪽에 score mode의 1,2,3등의 기록을 보여줍니다.<br><br>
+
+
+8.maingame_timer.jsp<br>
+로그인 하지 않으면 username이 session에 저장되지 않아 로그인 페이지로 이동합니다.<br>
+로그인 후 게임을 실행하고 그림 10쌍을 맞추면 insert_timermode.jsp로 이동합니다.<br>
+아래쪽에 session에 저장된 username과 자신의 최고 기록을 보여줍니다.<br>
+최고기록 코드<br>
+<img src="https://user-images.githubusercontent.com/45381907/85221256-58673000-b3ed-11ea-9f7e-cdf4eee2eab6.PNG"><br><br>
+바꾼 timer code<br>
+<img src="https://user-images.githubusercontent.com/45381907/85221253-4eddc800-b3ed-11ea-819d-b3aa3251c718.PNG"><br><br>
+
+
+9. insert_timermode.jsp<br>
+maingame_timer.jsp에서 현재 기록 'time'을 'time'이라는 변수로 받아 옵니다.<br>
+DB에 저장된 자신의 최고 기록과 현재 기록 'time'을 비교하여 time이 더 높으면 DB에 update 합니다.<br>
+  그 후 Timerend.jsp로 'time'을 'time_r'이라는 이름과 값과 함께 이동합니다.<br><br>
+
+
+
+10. Timerend.jsp<br>
+화면 위쪽에 이번 게임에서 받은 점수인 'time_r'을 보여주고
+화면 아래쪽에 timer mode의 1,2,3등의 기록을 보여줍니다.<br><br>
+  
+  
+  
+  
+  <br>
+   <h2>DB part</h2>
+    <h3>2014042979 김형규<br><a href="https://github.com/rkdus5485/project/tree/DB">DB branch</a></h3>
+    
+    <br>
+    <p>팀 내에서 Database파트를 맡았습니다. JDBC를 사용하여 mysql를 연동했습니다. <br> table은 3개를 만들어서 사용하였습니다. <br><br>
+        <img src="login_game.png" width="300" height="100" alt="">
+        <br>1번째 사진인 login_game 테이블의 경우, 회원가입을 한 유저들의 아이디와 비밀번호를 저장합니다. <br>
+        <img src="record_timer.png" width="300" height="100" alt="">
+        <br>2번째 사진인 record_timer 테이블의 경우, timer mode의 게임이 끝난 후 점수를 저장합니다. <br>
+        <img src="record_pointer.png" width="300" height="100" alt="">
+        <br>3번째 사진인 record_withouttimer 테이블의 경우, score mode의 게임이 끝난 후 점수를 저장합니다. <br>
+        <img src="Score_Result.png" width="200" height="200" alt=""><br>
+        위 사진은 record_withouttimer 테이블에 점수가 저장이 된 사진입니다.<br>
+        <br>
+        서버는 팀원인 김가연(16)의 phpMyAdmin서버를 이용하였습니다. <br>
+    </p>
+    <p>
+        최종적으로 총 5개의 파일이 사용되었습니다.  <br>
+<br>
+ForRank.java <br>
+Insert_Pointmode.java <br>
+Insert_Timermode.java  <br>
+Select_Pointmode.jsp <br>
+Select_Timermode.jsp <br>
+<br>
+1. ForRank.java <br>
+Timer mode 와 Score mode의 전체 순위 1~3위까지 보여주도록 만든 파일입니다.<br><br>
+<br>
+2. Insert_Pointmode.java <br>
+Score mode의 게임이 종료되면 해당 유저의 점수를 테이블에 기록하도록 하는 파일입니다.<br><br>
+<br>
+3. Insert_Timermode.java <br>
+Timer mode의 게임이 종료되면 해당 유저의 시간 기록을 테이블에 기록하도록 하는 파일입니다. <br><br>
+<br>
+4. Select_Pointmode.jsp <br>
+Score mode의 게임이 종료된 후, 기존 점수보다 높은 점수를 획득할 시 새롭게 테이블에 값을 업데이트 해주고, 아닐시에는 저장하지 않은 기능을 하는 파일입니다. <br><br>
+<br>
+5. Select_Timermode.jsp <br>
+Timer moded의 게임이 종료된 후, 기존 시간보다 짧은 시간을 기록할 시에 새롭게 테이블에 값을 업데이트 해주고, 아닐시에는 저장하지 않는 기능을 하는 파일입니다. <br>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</body>
