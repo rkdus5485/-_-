@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <style type="text/css">
         :root {
   --input-padding-x: 1.5rem;
@@ -46,18 +46,13 @@ body {
   transition: all 0.2s;
 }
          </style>
+
 	 <script>
-	function checkID(){
-		var sid= document.signupform; // sid = 폼 자체를 변수로 선언
-		if(!sid.userid.value){ // 만약 입력한 값이 없으면 
-			alert("아이디를 입력해주세요");
-			sid.userid.focus(); // 아이디에 포커스
-		}else{
-		var joinid = sid.userid.value;
-		var url = "./gamecheckID.jsp?userid="+joinid;
-		window.open(url,"","width=400, height=150, resizable=no, scrollbars=no");
-	}};
+	var Click_check='';
+
 	function checkUsername(){
+
+		Click_check = 'yes';
 		var sUser= document.signupform; // sid = 폼 자체를 변수로 선언
 		if(!sUser.username.value){ // 만약 입력한 값이 없으면 
 			alert("닉네임을 입력해주세요");
@@ -65,39 +60,54 @@ body {
 		}else{
 		var joinusername = sUser.username.value;
 		var url = "./gamecheckUsername.jsp?username="+joinusername;
-		window.open(url,"","width=400, height=150, resizable=no, scrollbars=no");
-	}};
+		//window.open(url,"","width=400, height=150, resizable=no, scrollbars=no");
+		window.location.href="http://webdev.iptime.org:8080/kgy/gamecheckUsername.jsp?username="+joinusername;
+		
+
+	}}
+	function signup(){
+		var sUser=document.signupform;
+		
+		if(Click_check != 'yes'){
+			alert("닉네임 중복확인을 하십시오.");
+		}
+		else if(!sUser.userpw.value){
+			//alert("비밀번호를 입력하세요");
+			
+		}
+		else{
+			//alert("가입");
+			//window.location.href="http://webdev.iptime.org:8080/kgy/gamesignup.jsp";
+		}
+	}
   </script>
-	
-	
 	<title>회원가입</title>
 </head>
 <body>
-	<form method="post" action="gamesignup.jsp" id="signupform" name="signupform">
-          <div class="card card-signin my-5">
+	<form method="post"  id="signupform" name="signupform">
+		<div class="card card-signin my-5">
           		<h2>회원가입</h2>
            <form class="form-signin">
-		<table>
-		<tr>
-             <tr>
-	          <div class="form-label-group">
-                <label for="inputEmail">Username</label>
-                <input type="email" id="username" class="username" placeholder="닉네임" required autofocus>    
-               <input type="button" value="중복확인" onClick="javascript:checkID()">
-              </div>
-               <br>
-              <div class="form-label-group">
-              <label for="inputPassword">Password</label>
-                <input type="password" id="userpw" class="userpw" placeholder="비밀번호" required>
-              </div>
-              <br>
-	   </tr>
-	</table>
-	<input type="submit" value="가입하기" />
-        <input type="reset" value="다시쓰기" />
+				<table align="center">
+				<tr>
+					<div class="form-label-group">
+					
+					<td><label for="inputEmail">Username</label></td>
+					<td><input type="text" name="username" id="username" class="username" placeholder="닉네임"></td>
+					<td><input type="button" value="중복확인" onClick="javascript:checkUsername()"></td>
+					</div>
+					</tr>
+					<tr>
+					<div class="form-label-group">
+					<td><label for="inputPassword">Password</label></td>
+					<td><input type="password" id="userpw" name="userpw" class="userpw" placeholder="비밀번호" required> </td>             
+					</div>
+					<br>
+				</tr></table>
+			<tr><input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" /><br>
+		   <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/initialpage.html'" value="종료하기" class="btn btn-lg btn-primary btn-block text-uppercase" style=background-color:red></button></tr>
         <br>
         <br>
-	<input type="button" onclick='self.close()' value="종료하기" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
      </form>
   </div>
   </form>
