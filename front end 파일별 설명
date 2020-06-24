@@ -8,7 +8,7 @@
 3) https://sketch2code.azurewebsites.net/
 - 수기로 작성한 이미지를 html 코드로 변환하는 홈페이지
 
-[게임 구성]
+[프론트 페이지 구성]
 1) initialpage.html
 - input type="button"을 사용하여 로그인과 회원가입 버튼을 만들고
  onclick="location.href='페이지 주소'"를 통하여 각각 로그인 페이지와 회원가입 페이지로 연결될 수 있게 했습니다
