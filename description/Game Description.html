@@ -1,0 +1,102 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+       <style type="text/css">
+       :root {
+ --input-padding-x: 1.5rem;
+ --input-padding-y: .75rem;
+}
+
+body {
+ background: #007bff;
+ background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+#scoreBtn{
+  border: 0;
+  border-radius: 1rem;
+  color: white;
+  font-size:20px;
+  background-color: #42423E;
+  padding: 5px;
+  width:15%;
+  font-weight: bold;
+  border-collapse: collapse;
+  display: inline-block;
+}
+
+.card-signin {
+ border: 0;
+ border-radius: 1rem;
+ background: #fff;
+ text-align : right;
+ box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+ margin-bottom: 2rem;
+ font-weight: 300;
+ text-align: center;      
+ font-size: 1.5rem;
+
+}
+
+.card-signin .card-body {
+ padding: 2rem;
+ text-align: center;   
+}
+
+
+        </style>
+<body>
+ <div class="container">
+   <div class="row">
+     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+       <div class="card card-signin my-5">
+         <br>
+                         <td class='alignRight'>
+			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="돌아가기" id='scoreBtn'></td>ㅤㅤ
+         <div class="card-body">
+           <h5 class="card-title text-center">[같은그림찾기]</h5>
+           <form class="form-signin" action="#">
+
+            1. 회원이 아니시라면 먼저 회원가입을 하셔야합니다.<br>
+          <br>
+            2. 회원이시라면, 로그인을 하셔야 게임을 즐기실 수 있습니다.<br>
+            <br>
+            3. 총 20개의 카드로 10개 종류의 그림이 있습니다.
+                <br>
+                그림 짝을 모두 맞추면 끝나는 단순한 게임입니다.
+            <br>
+            <br>
+            4.게임 모드는 Score mode와 Timer mode 2가지로 나뉩니다.
+                <br>
+                하단에는 회원님의 아이디, 점수(Score mode의 경우) 또는 시간(Timer mode의 경우), start버튼이 있습니다. 
+                <br>
+                하단의 start 버튼을 누르면 게임이 시작됩니다.
+                <br>
+                상단 우측의 빨간색 X 버튼을 누르면 게임 도중에 끝낼 수 있습니다.
+                <br>
+                <img src="https://raw.githubusercontent.com/rkdus5485/project/DB/description/Score.jpg" width="300" height="400" alt="score mode">
+                <img src="https://raw.githubusercontent.com/rkdus5485/project/DB/description/Time.jpg" width="300" height="400" alt="timer mode">
+            <br>
+            <br>
+
+            5. Score mode : 시간에 제한은 없습니다. 하지만 짝을 잘못 맞췄을 시에는 감점이 있습니다.<br>
+                 맞췄을 시 : +10 / 틀렸을 시 : -5
+                 <br>
+                <img src="https://raw.githubusercontent.com/rkdus5485/project/DB/description/AfterScore.jpg" width="300" height="400" alt="finish">
+            <br>
+            <br>
+            6. Timer mode : 누가 더 빨리 게임을 끝내는지 겨루는 방식입니다.<br>
+                 타이머가 존재합니다. 하지만 카드 짝을 잘못 맞췄을 경우에 감점은 없습니다.
+                <br>
+                <img src="https://raw.githubusercontent.com/rkdus5485/project/DB/description/AfterTimejpg.jpg" width="300" height="400" alt="finish"><br>
+            7. Rank : Timer mode와 Score mode의 rank를 확인할 수 있습니다. 각 모드별로 1위부터 3위까지 보여줍니다. <br>
+            <img src="https://raw.githubusercontent.com/rkdus5485/project/DB/description/Rank.jpg" width="300" height="400" alt=""><br>
+            
+  <br>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</body>
