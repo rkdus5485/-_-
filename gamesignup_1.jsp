@@ -16,7 +16,7 @@
 	String username = request.getParameter("username");
 
 	try{
-		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
+		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/kgy?"+"useUnicode=true&characterEncoding=utf8";
 		String dbUser = "kgy";
 		String dbPass = "kgy1234";
 
@@ -115,12 +115,12 @@ body {
 		<div class="card card-signin my-5">
           		<h2>회원가입</h2>
            <form class="form-signin">
-				<table>
+				<table align="center">
 				<tr>
 					<div class="form-label-group">
 					<td><label for="inputEmail">Username</label></td>
 					<td><input type="text" name="username" id="username" class="username" value="<%=username%>" placeholder="닉네임" readOnly /></td>
-					<td><input type="button" value="중복확인" id="check" onClick="javascript:checkUsername()">
+					<td><input type="button" value="중복확인완료" id="check" readOnly>
 					</td></div></tr>
 					<tr>
 					<div class="form-label-group">
