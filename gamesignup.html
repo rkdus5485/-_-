@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Sign Up</title>
 	<meta charset="utf-8" />
 	 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <style type="text/css">
@@ -48,7 +49,7 @@ body {
          </style>
 
 	 <script>
-	var Click_check='';
+	var Click_check='no';
 
 	function checkUsername(){
 
@@ -88,7 +89,7 @@ body {
 		<div class="card card-signin my-5">
           		<h2>회원가입</h2>
            <form class="form-signin">
-				<table align="center">
+				<table align ="center">
 				<tr>
 					<div class="form-label-group">
 					
@@ -104,10 +105,12 @@ body {
 					</div>
 					<br>
 				</tr></table>
-			<tr><input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" /><br>
-		   <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/initialpage.html'" value="종료하기" class="btn btn-lg btn-primary btn-block text-uppercase" style=background-color:red></button></tr>
+				<tr><br>
+			<input type="submit" value="가입하기" onClick="javascript:signup()" />&nbsp;&nbsp;&nbsp;<input type="reset" value="다시쓰기"/><br><br>
+			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/initialpage.html'" value="종료하기" class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color:red"></button></tr>
         <br>
         <br>
+		
      </form>
   </div>
   </form>
