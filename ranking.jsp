@@ -26,7 +26,7 @@
 
 
 		// TODO Auto-generated constructor stub
-		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
+		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/kgy?"+"useUnicode=true&characterEncoding=utf8";
 		String dbUser = "kgy";
 		String dbPass = "kgy1234";
 
@@ -181,7 +181,7 @@ body {
   border-radius: 1rem;
   color: white;
   font-size:15px;
-   background-color: #999999;
+  background-color: #999999;
   width: 40%;
   padding: 5px;
   font-weight: bold;
@@ -196,6 +196,18 @@ body {
   font-size:15px;
   background-color: #42423E;
   width: 40%;
+  padding: 5px;
+  font-weight: bold;
+  border-collapse: collapse;
+  display: inline-block;
+}
+#scoreBtn3{
+  border: 0;
+  border-radius: 1rem;
+  color: white;
+  font-size:15px;
+  background-color: #42423E;
+  width: 20%;
   padding: 5px;
   font-weight: bold;
   border-collapse: collapse;
@@ -227,8 +239,8 @@ body {
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <form class="form-signin"><input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="종료하기" id=scoreBtn style="background-color:red; float:right;"></button><br><br>
-              <span class="card-title text-center">Score Ranking</span>
+            <form class="form-signin"><input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="종료하기" id='scoreBtn3' style="background-color:red; float:right;"></button><br><br>
+              <div class="card-title text-center">Score Ranking</div>
  <img src = https://image.flaticon.com/icons/svg/1949/1949434.svg height="175px" width="80%" >
 
               <br>
