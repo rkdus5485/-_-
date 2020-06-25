@@ -53,10 +53,10 @@ body {
          <div class="card-body">
            <h5 class="card-title text-center">Select Description</h5>
            <form class="form-signin" action="#">
-             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/maingame_score.jsp'" value="Game Description" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
-             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/maingame_timer.jsp'" value="Front_End" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
-             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/ranking.html'" value="Back_End" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
-             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/maingame_score.jsp'" value="Data_Base" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
+             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Game_Description.html'" value="Game Description" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
+             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Frontend_Description.html'" value="Front_End" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
+             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Backend_Description.html'" value="Back_End" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
+             <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Db_Description.html'" value="Data_Base" class="btn btn-lg btn-primary btn-block text-uppercase"></button><br><br>
              <input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/initialpage.html'" value="Exit" class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color:red"></button>
            </form>
          </div>
