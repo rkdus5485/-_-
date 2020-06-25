@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>DB_description</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
        <style type="text/css">
        :root {
@@ -52,9 +57,9 @@ body {
        <div class="card card-signin my-5">
          <br>
                          <td class='alignRight'>
-			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="돌아가기" id='scoreBtn'></td>ㅤㅤ
+			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Game_Description_select.html'" value="X" id='scoreBtn' style=background-color:red></td>ㅤㅤ
          <div class="card-body">
-           <h5 class="card-title text-center">[DB_part]</h5>
+           <h5 class="card-title text-center" style="font-weight:bold;color:#0054FF;">[DB_part]</h5>
            <form class="form-signin" action="#">
 
     <h3>2014042979 김형규<br><a href="https://github.com/rkdus5485/project/tree/DB">DB branch</a></h3>
