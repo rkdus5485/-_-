@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Backend_description</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
        <style type="text/css">
        :root {
@@ -52,21 +57,21 @@ body {
        <div class="card card-signin my-5">
          <br>
                          <td class='alignRight'>
-			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/modeselect.html'" value="돌아가기" id='scoreBtn'></td>ㅤㅤ
+			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Game_Description_select.html'" value="X" id='scoreBtn'style=background-color:red></td>ㅤㅤ
          <div class="card-body">
-           <h5 class="card-title text-center">[Back_End part]</h5>
+           <h5 class="card-title text-center" style="font-weight:bold;color:#0054FF;">[Back_End part]</h5>
            <form class="form-signin" action="#">
            
     <h3>2016007701 김가연<br>2016007838 심유라<br><a href="https://github.com/rkdus5485/project/tree/back_end">Back_End branch</a></h3>
  
 1. maingame_score.jsp, maingame_timer.jsp<br>
 https://dororongju.tistory.com/103 여기에 있는 오픈 소스를 사용했고, <br>
-<img src="https://user-images.githubusercontent.com/45381907/85260211-4779f580-b4a5-11ea-8277-59ad18fd6531.png"><br><br>
+<img src="https://user-images.githubusercontent.com/45381907/85260211-4779f580-b4a5-11ea-8277-59ad18fd6531.png" width="300" height="500"><br><br>
 
 게임 진행 중에 타이머가 실행되는 부분은 
 http://happycgi.com/7708 여기에 있는 코드를 사용했습니다.<br>
       타이머 사진<br>
-<img src="https://user-images.githubusercontent.com/45381907/85260244-506ac700-b4a5-11ea-9f92-80ce37fed13b.PNG"><br><br>
+<img src="https://user-images.githubusercontent.com/45381907/85260244-506ac700-b4a5-11ea-9f92-80ce37fed13b.PNG" width="300" height="100"><br><br>
 그리고 다른 코드들은 w3school에 있는 코드를 참고하여 만들었습니다.<br><br>
 
 2. checkUsername.jsp<br>
@@ -93,9 +98,9 @@ gamesignup_1.jsp파일에 넘겨진 아이디 값은 다시 수정할 수 없도
 로그인 후 게임을 실행하고 그림 10 쌍을 맞추면 insert_scoremode.jsp로 이동합니다. 그림을 맞추면 +10점, 틀리면 -5점을 받습니다.<br>
 아래쪽에 session에 저장된 username과 자신의 최고점수를 보여줍니다.<br>
 최고기록 코드<br>
-<img src="https://user-images.githubusercontent.com/45381907/85221260-5ef5a780-b3ed-11ea-8fce-7b8f725cd866.PNG"><br><br>
+<img src="https://user-images.githubusercontent.com/45381907/85221260-5ef5a780-b3ed-11ea-8fce-7b8f725cd866.PNG" width="300" height="200"><br><br>
 점수 +- 되는 코드<br>
-<img src="https://user-images.githubusercontent.com/45381907/85221248-408fac00-b3ed-11ea-9a76-9dbe22c9e3a4.PNG"><br><br>
+<img src="https://user-images.githubusercontent.com/45381907/85221248-408fac00-b3ed-11ea-9a76-9dbe22c9e3a4.PNG" width="300" height="500"><br><br>
 
 
 
@@ -116,9 +121,9 @@ DB에 저장된 자신의 최고 점수와 현재 점수 'point'를 비교하여
 로그인 후 게임을 실행하고 그림 10쌍을 맞추면 insert_timermode.jsp로 이동합니다.<br>
 아래쪽에 session에 저장된 username과 자신의 최고 기록을 보여줍니다.<br>
 최고기록 코드<br>
-<img src="https://user-images.githubusercontent.com/45381907/85221256-58673000-b3ed-11ea-9f7e-cdf4eee2eab6.PNG"><br><br>
+<img src="https://user-images.githubusercontent.com/45381907/85221256-58673000-b3ed-11ea-9f7e-cdf4eee2eab6.PNG" width="400" height="400"><br><br>
 바꾼 timer code<br>
-<img src="https://user-images.githubusercontent.com/45381907/85221253-4eddc800-b3ed-11ea-819d-b3aa3251c718.PNG"><br><br>
+<img src="https://user-images.githubusercontent.com/45381907/85221253-4eddc800-b3ed-11ea-819d-b3aa3251c718.PNG" width="300" height="400"><br><br>
 
 
 9. insert_timermode.jsp<br>
