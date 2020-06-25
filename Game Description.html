@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Frontend_description</title>
+  <title>Game_Description</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
        <style type="text/css">
        :root {
@@ -57,64 +57,51 @@ body {
        <div class="card card-signin my-5">
          <br>
                          <td class='alignRight'>
-			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Game_Description_select.html'" value="X" id='scoreBtn' style=background-color:red></td>ㅤㅤ
+			<input type="button" onclick="location.href='http://webdev.iptime.org:8080/kgy/Game_Description_select.html'" value="X" id='scoreBtn' style=background-color:red ></td>ㅤㅤ
          <div class="card-body">
-           <h5 class="card-title text-center">[Front_End part]</h5>
+           <h5 class="card-title text-center" style="font-weight:bold;color:#0054FF;">[같은그림찾기]</h5>
            <form class="form-signin" action="#">
 
-    <h3>2016008104 김정인<br> 2017012342 이승빈<br><a href="https://github.com/rkdus5485/project/tree/front_end">Front_End branch</a></h3>
+            1. 회원이 아니시라면 먼저 회원가입을 하셔야합니다.<br>
+          <br>
+            2. 회원이시라면, 로그인을 하셔야 게임을 즐기실 수 있습니다.<br>
+            <br>
+            3. 총 20개의 카드로 10개 종류의 그림이 있습니다.
+                <br>
+                그림 짝을 모두 맞추면 끝나는 단순한 게임입니다.
+            <br>
+            <br>
+            4.게임 모드는 Score mode와 Timer mode 2가지로 나뉩니다.
+                <br>
+                하단에는 회원님의 아이디, 점수(Score mode의 경우) 또는 시간(Timer mode의 경우), start버튼이 있습니다. 
+                <br>
+                하단의 start 버튼을 누르면 게임이 시작됩니다.
+                <br>
+                상단 우측의 빨간색 X 버튼을 누르면 게임 도중에 끝낼 수 있습니다.
+                <br>
+                <img src="Score.jpg" width="300" height="200" alt="score mode">
+                <img src="Timer.jpg" width="300" height="200" alt="timer mode">
+            <br>
+            <br>
 
-  [참고 사이트]<br>
-1. <a href="https://jsfiddle.net/StartBootstrap/amxr8n19/">https://jsfiddle.net/StartBootstrap/amxr8n19/</a> <br>
-- CSS 참고 홈페이지<br><br>
-
-2. <a href="http://editor.livegap.com/index.php?lan=ko#fid=v82ep9mp03279&pid=8076fi4noz279">http://editor.livegap.com/index.php?lan=ko#fid=v82ep9mp03279&pid=8076fi4noz279</a><br>
-- HTML 작성 미리보기 홈페이지<br><br>
-
-3. <a href="https://sketch2code.azurewebsites.net/">https://sketch2code.azurewebsites.net/</a>
-<br>
-- 수기로 작성한 이미지를 html 코드로 변환하는 홈페이지<br>
-    <br><br>
-
-  [프론트 페이지 구성]<br></br>
-1. initialpage.html<br>
-- input type="button"을 사용하여 로그인과 회원가입 버튼을 만들고<br>
- onclick="location.href='페이지 주소'"를 통하여 각각 로그인 페이지와 회원가입 페이지로 연결될 수 있게 했습니다<br>
- background-image style코드를 사용하여 배경화면에 여러가지 과일 이미지를 삽입하였습니다.
-<br><br>
-
-2. gamesignup.html<br>
-- input type="text", input type="password"를 사용하여 닉네임과 비밀번호를 입력하는 란을 만들었습니다.<br>
- input type="submit"을 통해 가입하기 버튼을, input type="reset"을 통해 다시쓰기 버튼을 만들었습니다.<br>
- input type="button"으로 중복확인 버튼과 class="btn btn-lg btn-primary btn-block text-uppercase"을 사용하여 클릭 시 종료할 수 있도록 페이지 마다 종료하기 버튼을 만들었습니다.<br>
-<br><br>
-  
- 3. gamesignin.html<br>
-- input type="text", input type="password"를 통하여 닉네임과 비밀번호를 입력하는 란을 만들었습니다.<br>
- input type="button"과 onclick="location.href='페이지 주소'"를 통하여 로그인 버튼 클릭 시 게임 모드 선택 화면으로 이동하도록 만들고 종료하기 버튼을 만들었습니다.<br>
-<br><br>
-  
-4. modeselect.html<br>
-- input type="button"과 onclick="location.href='페이지 주소'"를 통하여 게임 설명, 점수 모드, 타이머 모드, 랭킹 확인 버튼을 만들고 종료하기 버튼을 만들었습니다.<br>
-<br><br>
-  
-5. maingame_score.html, maingame_timer.html<br>
-- #클래스 이름{속성 나열}과 div를 통해 스타일 속성을 일괄적으로 적용하기 위한 타이머, 게임, 점수, 게임종료, 유저네임, 최고기록, 시작, 시작 안내판을 만들었습니다.<br>
- <br><br>
-
-6. ranking.html<br>
-- #클래스 이름{속성 나열}로 기록판을 만들어 랭킹을 표시할 수 있게 했습니다.<br>
-img src = 페이지주소 를 사용하여 등수가 나오는 이미지를 삽입하였습니다.<br>
-<br><br>
-  
-7. score_end.html, timer_end.html<br>
-- input type="button"과 onclick="location.href='페이지 주소'"를 통해 해당 게임 모드 페이지와 연결해주는 다시하기 버튼과 모드 선택 페이지로 돌아가는 모드선택 버튼을 만들었습니다.<br>
- #클래스 이름{속성 나열}로 1위, 2위, 3위를 표시하는 점수판을 만들었습니다.<br>
- img src = 페이지주소 를 사용하여 등수가 나오는 이미지를 삽입하였습니다.<br>
-<br><br> 
+            5. Score mode : 시간에 제한은 없습니다. 하지만 짝을 잘못 맞췄을 시에는 감점이 있습니다.<br>
+                 맞췄을 시 : +10 / 틀렸을 시 : -5
+                 <br>
+                <img src="AfterScore.jpg" width="300" height="200" alt="finish">
+            <br>
+            <br>
+            6. Timer mode : 누가 더 빨리 게임을 끝내는지 겨루는 방식입니다.<br>
+                 타이머가 존재합니다. 하지만 카드 짝을 잘못 맞췄을 경우에 감점은 없습니다.
+                <br>
+                <img src="AfterTimer.jpg" width="300" height="200" alt="finish"><br>
+            7. Rank : Timer mode와 Score mode의 rank를 확인할 수 있습니다. 각 모드별로 1위부터 3위까지 보여줍니다. <br>
+            <img src="Rank.jpg" width="300" height="200" alt=""><br>
+            
+  <br>
            </form>
          </div>
        </div>
      </div>
    </div>
+ </div>
 </body>
