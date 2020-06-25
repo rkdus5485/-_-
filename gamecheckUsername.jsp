@@ -1,3 +1,5 @@
+<!--회원가입 시 입력한 닉네임이 기존에 다른 사용자가 사용하는 닉네임과 중복되는지 확인하고 중복이 되지않으면 
+사용할 수 있도록 하고, 중복이 되면 사용할 수 없도록 하는 닉네임 중복확인 jsp파일입니다.-->
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 
 
@@ -12,7 +14,7 @@
 <html lang="ko">
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>이메일 중복확인</title>
+	<title>닉네임 중복확인</title>
 
 <%
 	Connection conn = null;
@@ -25,7 +27,7 @@
 	try{
 		String jdbcDriver = "jdbc:mysql://webdev.iptime.org:3306/rkdus?"+"useUnicode=true&characterEncoding=utf8";
 		String dbUser = "kgy";
-			String dbPass = "kgy1234";
+		String dbPass = "kgy1234";
 
 		conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 		pstmt = conn.prepareStatement("select GameUsername from login_game where GameUsername=?");
@@ -42,28 +44,33 @@
 		
 	
 		function btnClose(){
-			var semail=document.checkform;
-			opener.document.signupform.username.value="<%=username%>";
-			window.close();
-	};
+
+			var sUser= document.checkform; // sid = 폼 자체를 변수로 선언
+			var joinusername = sUser.username.value;
+			var url = "./gamesignup_1.jsp?username="+joinusername;
+			window.location.href="http://webdev.iptime.org:8080/kgy/gamesignup_1.jsp?username="+joinusername;
+         
+            }
 	</script>
 </head>
 <body>
-	<form action="gamecheckUsername.jsp" id="checkform">
+	<form method="post" action="gamecheckUsername.jsp" id="checkform" name="checkform">
 		<%
 		try{
 			if(rs.next()){
 			%>
-				현재 <%=username%>은 사용 중입니다.<br><br>
-				닉네임 : <input type="text" name="username"></input>
-				<input type="submit" value="중복확인"></input>
+				<script>
+				alert('현재 <%=username%> 는 사용 불가입니다');
+				window.location.href="http://webdev.iptime.org:8080/kgy/gamesignup.html";
+				</script>
 				<%
 			}
 			else
 		{
 			%>
-			<%=username%>은 사용 가능합니다.
-			<input type="button" value="사용하기" onClick="btnClose('<?=$username?>')">
+			<input type="text" value="<%=username%>" name="username" id="username" class="username" readOnly />은 사용가능합니다.<br>
+			
+			<input type="button" value="사용하기" onClick="javascript:btnClose()">
 			<%
 		}
 	}catch(SQLException e){e.printStackTrace();}
