@@ -19,10 +19,10 @@
   
 - 로그인 및 회원가입
 
-  <div style="display:inline-block">
+  <div style="float:left">
     <img src = "https://user-images.githubusercontent.com/45381907/104876608-6557fc00-599b-11eb-8da9-e60f395d88ba.jpg" width="200">
   </div>
-  <div style ="display:inline-block">
+  <div style ="float:left">
     <img src ="https://user-images.githubusercontent.com/45381907/104876612-66892900-599b-11eb-8c6a-0789cabaaf67.jpg" width="200">
   </div>
   
