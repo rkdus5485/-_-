@@ -11,13 +11,17 @@
 - https://dororongju.tistory.com/103
 
 앱 구성 화면
-<img src="https://user-images.githubusercontent.com/45381907/104876623-69841980-599b-11eb-99ca-76d2d0a2f95d.PNG" width = "200">
+
+
 - 첫화면
   - 로그인
   - 회원가입
   - 종료하기
   
+<img src="https://user-images.githubusercontent.com/45381907/104876623-69841980-599b-11eb-99ca-76d2d0a2f95d.PNG" width = "200">
+
 - 로그인 및 회원가입
+
 <img src = "https://user-images.githubusercontent.com/45381907/104876608-6557fc00-599b-11eb-8da9-e60f395d88ba.jpg" width="300">
 
 <img src ="https://user-images.githubusercontent.com/45381907/104876612-66892900-599b-11eb-8c6a-0789cabaaf67.jpg" width="300">
@@ -50,4 +54,5 @@
     - 화면 위쪽으로 가장 높은 점수를 획득한 1~3 등이 표시
   - '타이머' 랭킹
     - 화면 아래쪽으로 가장 짧은 시간을 기록한 1~3 등이 표시
+    
 <img src ="https://user-images.githubusercontent.com/45381907/104876618-6852ec80-599b-11eb-9414-f74ca4c35768.jpg" width="300">  
