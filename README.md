@@ -14,4 +14,4 @@
 - 첫화면
   - 로그인
   - 회원가입
-<img src="https://user-images.githubusercontent.com/45381907/104876623-69841980-599b-11eb-99ca-76d2d0a2f95d.PNG">
+<img src="https://user-images.githubusercontent.com/45381907/104876623-69841980-599b-11eb-99ca-76d2d0a2f95d.PNG" width = "200">
