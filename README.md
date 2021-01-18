@@ -26,7 +26,18 @@
 
 <img src ="https://user-images.githubusercontent.com/45381907/104876612-66892900-599b-11eb-8c6a-0789cabaaf67.jpg" width="300">
 
+- 게임 모드 선택 화면
+  - 'Game Description'
+    - 게임 설명이 담긴 페이지
+  - 'score mode'
+    - '틀린 그림 찾기' score 모드
+  - 'timer mode'
+    - '틀린 그림 찾기' timer 모드
+  - 'ranking'
+    - '틀린 그림 찾기' 사용자 들의 랭킹 화면
+<img src ="https://user-images.githubusercontent.com/45381907/85711950-c4fe6980-b722-11ea-8da8-199fb746528c.jpg" width="300">
   
+
 - 게임화면
   - '스코어'
     - 모든 카드를 다 맞출때까지 두 카드가 일치하면 +10, 두 카드가 일치하지 않으면 -5점을 부여하여 점수계산
