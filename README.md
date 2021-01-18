@@ -57,8 +57,9 @@
     
       - 여기서 나의 점수 및 시간은 방금 한 게임의 점수 및 시간을 보여줌
       
+<img src ="https://user-images.githubusercontent.com/45381907/104878699-c1248400-599f-11eb-9b11-233381031872.jpg" width="300">
 <img src = "https://user-images.githubusercontent.com/45381907/104876614-6721bf80-599b-11eb-9a6e-efa324716c22.jpg" width="300">
-<img src ="https://user-images.githubusercontent.com/45381907/104876616-6721bf80-599b-11eb-8d14-c4034c6cf907.jp" width="300">
+
 
 - 랭킹 (게임 선택 화면에서 누르면 나오는 페이지)
   - '스코어' 랭킹
